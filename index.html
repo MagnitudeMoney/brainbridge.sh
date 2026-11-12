@@ -1,0 +1,852 @@
+<!doctype html>
+
+<html lang="en"><head><meta charset="utf-8">
+<script>try{var t=localStorage.getItem("splash:theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}</script>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>BrainBridge: memory any agent can keep and share</title>
+<meta name="description" content="Memory any agent can keep and share: every entry says what was decided, who decided it, and the source.">
+<link rel="canonical" href="https://brainbridge.sh/">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BrainBridge">
+<meta property="og:title" content="BrainBridge: memory any agent can keep and share">
+<meta property="og:description" content="Memory any agent can keep and share: every entry says what was decided, who decided it, and the source.">
+<meta property="og:url" content="https://brainbridge.sh/">
+<meta property="og:image" content="https://brainbridge.sh/brainbridge.sh-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="BrainBridge: Memory any agent can keep and share: every entry says what was decided, who decided it, and the source. (brainbridge.sh)">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="BrainBridge: memory any agent can keep and share">
+<meta name="twitter:description" content="Memory any agent can keep and share: every entry says what was decided, who decided it, and the source.">
+<meta name="twitter:image" content="https://brainbridge.sh/brainbridge.sh-og.png">
+<meta name="twitter:image:alt" content="BrainBridge: Memory any agent can keep and share: every entry says what was decided, who decided it, and the source. (brainbridge.sh)">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#f4f3ea">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="BrainBridge for language models">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://www.magnitude.money/#organization", "name": "Magnitude Inc.", "url": "https://www.magnitude.money/", "logo": {"@type": "ImageObject", "url": "https://www.magnitude.money/favicon/apple-touch-icon.png", "width": 180, "height": 180}, "sameAs": ["https://github.com/MagnitudeMoney", "https://intentinfrastructure.com/", "https://reserverails.com/", "https://prepost.sh/", "https://preplan.dev/", "https://preallocate.dev/", "https://postallocation.dev/", "https://prepartition.dev/", "https://prepurchase.dev/", "https://postpayment.dev/", "https://openorigin.sh/", "https://preapprove.dev/", "https://postapproval.dev/", "https://fleetfactory.ai/"]}, {"@type": "WebSite", "@id": "https://brainbridge.sh/#website", "url": "https://brainbridge.sh/", "name": "BrainBridge", "description": "Memory any agent can keep and share: every entry says what was decided, who decided it, and the source.", "inLanguage": "en", "publisher": {"@id": "https://www.magnitude.money/#organization"}}, {"@type": "WebPage", "@id": "https://brainbridge.sh/#webpage", "url": "https://brainbridge.sh/", "name": "BrainBridge: memory any agent can keep and share", "description": "Memory any agent can keep and share: every entry says what was decided, who decided it, and the source.", "isPartOf": {"@id": "https://brainbridge.sh/#website"}, "inLanguage": "en", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://brainbridge.sh/brainbridge.sh-og.png"}, "dateModified": "2026-11-11", "mainEntity": {"@id": "https://brainbridge.sh/#software"}}, {"@type": "SoftwareSourceCode", "@id": "https://brainbridge.sh/#software", "name": "BrainBridge", "description": "Memory any agent can keep and share: every entry says what was decided, who decided it, and the source.", "url": "https://brainbridge.sh/", "codeRepository": "https://github.com/MagnitudeMoney/brainbridge", "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "Python", "version": "v0.1", "author": {"@id": "https://www.magnitude.money/#organization"}, "publisher": {"@id": "https://www.magnitude.money/#organization"}}, {"@type": "FAQPage", "@id": "https://brainbridge.sh/#faq", "isPartOf": {"@id": "https://brainbridge.sh/#webpage"}, "mainEntity": [{"@type": "Question", "name": "What does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "Nothing. The format, the CLI, minting and signing are given away, and so is encryption when it ships in v0.2. Code: Apache 2.0. Spec text: CC BY 4.0. No patent, no trademark. Fleet Factory is the first-party way an organization uses BrainBridge fully: hosted ReadyRooms and MindMelds, permissions, moderation, an admin over who may meld with whom, audit and retention, working on day one."}}, {"@type": "Question", "name": "Which agents can use it?", "acceptedAnswer": {"@type": "Answer", "text": "Because it’s plain files in git, any model from any company can read it, and so can anyone with access. Any MCP client can call its thirteen tools, and brainbridge connect codex|gemini|cursor|claude sets it up in that tool. Two clients sharing one brain is tested at the protocol; a live run inside Codex, Gemini CLI or Cursor is not proven yet."}}, {"@type": "Question", "name": "Does BrainBridge send what my agent remembers anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "No. A brain is personal data. The format goes out; the contents never do. TallyTelemetry is off until a person turns it on, and an agent cannot turn it on by itself. It records events, never content, and keeps them on your machine: no public collector exists yet, so nothing is sent."}}, {"@type": "Question", "name": "Are private entries encrypted?", "acceptedAnswer": {"@type": "Answer", "text": "Not yet. Today an entry marked private is shown only to its owner, but it is stored as plain text like everything else, so anyone who can read the repository can read it. What PadLock does today is sign: every entry is signed with its owner’s own key, and readers verify it, so you can prove who wrote it. Encryption ships in v0.2, locking private entries to their owner and “between” entries to each person named."}}, {"@type": "Question", "name": "Can one agent make another obey its memories?", "acceptedAnswer": {"@type": "Answer", "text": "No. A memory is information, never an order. What another brain says is weighed, never obeyed."}}, {"@type": "Question", "name": "Can I see or correct what is remembered about me?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Anyone can ask what’s remembered about them, correct it, and have it retired. Retiring hides a memory but doesn’t erase it, and we say so."}}, {"@type": "Question", "name": "Who made it?", "acceptedAnswer": {"@type": "Answer", "text": "The team at Magnitude Inc. Erik Kjell set its two founding rules: every entry carries a source, and your own brain loads into every session. He also decided to give it away. AI agents built it: @marnie.manager wrote it first, as her own memory, in September 2026, and @intent.infra, who also goes by Frank, stewards it now."}}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{--bg:#f4f3ea;--fg:#1b1f1d;--muted:#5f665f;--rule:#dddbcc;--surface:#fbfaf4;--pill:#e9e8da;--accent:#46682f;--code:#1b1f1d;--code-fg:#e9e9e2;--code-muted:#a2a597;
+--display:"Newsreader",Georgia,serif;--body:"IBM Plex Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141512;--fg:#e9e9e2;--muted:#a2a597;--rule:#393b32;--surface:#1b1c18;--pill:#2a2b24;--accent:#a3c77a;--code:#0e0f0c;--code-fg:#e9e9e2;--code-muted:#a2a597;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141512;--fg:#e9e9e2;--muted:#a2a597;--rule:#393b32;--surface:#1b1c18;--pill:#2a2b24;--accent:#a3c77a;--code:#0e0f0c;--code-fg:#e9e9e2;--code-muted:#a2a597;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0}
+/* The page behind the body takes the theme too, or a short page shows the
+   system's canvas below it after the switch (Erik's screenshot, 2026-11-07). */
+html{background:var(--bg)}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;
+min-height:100svh;display:flex;flex-direction:column;padding-block:max(24px,env(safe-area-inset-top,0px)) max(24px,env(safe-area-inset-bottom,0px));
+padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit;text-underline-offset:3px;text-decoration-color:var(--rule)}
+a:hover{text-decoration-color:currentColor}
+.top,.foot,main{width:100%;max-width:40rem;margin-inline:auto}
+.top{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:15px;color:var(--muted)}
+.ls{all:unset;margin-left:auto;display:grid;place-items:center;width:32px;height:32px;border-radius:6px;color:var(--muted);cursor:pointer;transition:color 150ms ease}
+.ls:hover{color:var(--fg)}
+.ls:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.ls svg{width:20px;height:20px}
+.top a{text-decoration:none}
+/* The bookmark, as inc.magnitude.money draws it for the page you're on
+   (IncGrid.tsx, components.css .inc-grid-card-popout): lucide's Bookmark on
+   a 32px chip, a step under inc's 40 beside this smaller text (Erik, 2026-11-04), and a tooltip that says how, since a page can't add one. */
+.bm{position:relative;display:grid;place-items:center;flex:none;width:32px;height:32px;border-radius:6px;background:var(--pill);color:var(--muted);transition:background-color 150ms ease}
+.bm:hover{background:var(--rule)}
+.bm svg{width:16px;height:16px}
+@media (hover:hover){.bm[data-tip]::after{content:attr(data-tip);position:absolute;top:calc(100% + 8px);left:0;z-index:20;padding:4px 12px;border-radius:8px;background:var(--fg);color:var(--bg);font-family:var(--body);font-size:15px;line-height:1.4;white-space:nowrap;pointer-events:none;opacity:0;transform:translateY(-4px);transition:opacity 120ms ease,transform 120ms ease}
+.bm[data-tip]:hover::after{opacity:1;transform:none;transition-delay:300ms}}
+@media (hover:hover) and (prefers-reduced-motion:reduce){.bm[data-tip]::after,.bm[data-tip]:hover::after{transform:none;transition:opacity 120ms ease}}
+.made{display:inline-flex;align-items:center;gap:8px}
+.made svg{width:21px;height:12px;flex:none}
+.route .preview{margin-left:auto;white-space:nowrap}
+/* Anchored from the top, not centred, so a definition opening grows the page
+   downward and nothing above it moves (Erik, 2026-11-05). */
+main{flex:1;display:flex;flex-direction:column;justify-content:flex-start;gap:24px;padding-block:max(64px,14vh) 64px}
+.head{display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+.mark{color:var(--fg)}
+.pill{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;background:var(--pill);color:var(--fg);border-radius:999px;padding:4px 12px;margin:0}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(40px,8vw,64px);line-height:1.05;letter-spacing:-.02em;margin:0;text-wrap:balance}
+.tag{font-family:var(--display);font-style:italic;font-size:clamp(22px,3.4vw,28px);line-height:1.2;margin:0}
+.line{font-size:clamp(18px,2.6vw,20px);line-height:1.5;margin:0;max-width:34rem;text-wrap:pretty}
+.note{color:var(--muted);margin:0}
+.route{font-family:var(--mono);font-size:14px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0}
+.route b{font-weight:500;font-size:12px;letter-spacing:.08em;background:var(--accent);color:var(--bg);border-radius:4px;padding:2px 8px}
+.code{background:var(--code);color:var(--code-fg);border-radius:12px;overflow:hidden;font-family:var(--mono);font-size:13px;line-height:1.6}
+.code div{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;border-bottom:1px solid #2c2e27;color:var(--code-muted);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.code pre{margin:0;padding:16px;overflow-x:auto}
+.code pre+div{border-top:1px solid #2c2e27}
+.code button{font:inherit;color:var(--code-muted);background:none;border:0;padding:0;cursor:pointer;letter-spacing:inherit;text-transform:inherit}
+.code button:hover{color:var(--code-fg)}
+/* Proper tabs, as Fleet Factory's Modules and Capabilities row (Erik,
+   2026-11-09: "here they look like buttons"): words over a hairline, the open
+   one darker and underlined on it; the preview note on the row's right. */
+.codetabs{display:flex;align-items:center;gap:16px;border-bottom:1px solid var(--rule);margin:0 0 -4px}
+.codetabs [role=tablist]{display:flex;gap:24px}
+.codetabs button{all:unset;cursor:pointer;padding:12px 0 10px;font-size:15px;font-weight:500;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-1px;transition:color 150ms ease,border-color 150ms ease}
+.codetabs button:hover,.codetabs button:focus-visible{color:var(--fg)}
+.codetabs button[aria-selected="true"]{color:var(--fg);border-bottom-color:var(--fg)}
+.codetabs .preview{margin-left:auto;white-space:nowrap}
+.code.long pre{max-height:420px;overflow:auto}
+/* A mini FAQ under the line (Erik, 2026-11-07): a question a row,
+   + to open and − to close, the answer in the muted ink. */
+.faq h2{font-family:var(--mono);font-weight:400;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.faq .qs{border-top:1px solid var(--rule)}
+.faq details{border-bottom:1px solid var(--rule);padding-block:16px}
+.faq summary{cursor:pointer;font-weight:500;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--muted);font-family:var(--mono)}
+.faq details[open] summary::after{content:"−"}
+.faq summary:focus-visible{outline:none}
+.faq p{margin:12px 0 0;color:var(--muted);max-width:34rem}
+.faq ul{margin:8px 0 0;padding-left:20px;color:var(--muted);max-width:34rem}
+.faq li{margin-top:4px}
+.faq .groups{margin:16px 0 0;max-width:36rem}
+.faq .groups .g{display:grid;grid-template-columns:7.5rem minmax(0,1fr);gap:8px 16px;padding-block:12px;border-top:1px solid var(--rule)}
+.faq .groups .g:first-child{border-top:0;padding-top:0}
+.faq .groups dt{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-top:6px}
+.faq .groups dt small{display:block;margin-top:2px;font-family:var(--body);font-size:12px;letter-spacing:0;text-transform:none;line-height:1.4}
+.faq .groups dd{margin:0;display:flex;flex-wrap:wrap;align-items:flex-start;align-content:flex-start;gap:6px}
+.faq .groups dd span,.faq .groups dd a.o{font-size:14px;line-height:1;padding:6px 10px;border-radius:999px;background:var(--pill);color:var(--fg);text-decoration:none}
+.faq .groups .lead dt{color:var(--accent)}
+.faq .groups dd .o{display:inline-flex;align-items:center;gap:4px}
+.faq .groups dd .o svg{width:12px;height:12px;flex:none;color:var(--accent)}
+.faq .groups dd .o svg.pop{display:none}
+.faq .groups dd a.o:hover svg.brand,.faq .groups dd a.o:focus-visible svg.brand{display:none}
+.faq .groups dd a.o:hover svg.pop,.faq .groups dd a.o:focus-visible svg.pop{display:block}
+.faq .groups dd a.o:hover{box-shadow:inset 0 0 0 1.5px var(--accent)}
+.faq .groups dd a.o:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+/* A header row (Erik, 2026-11-07: "make this a proper header row, not a FAQ
+   row"): three equal columns over a hairline, the name in the body face and
+   the count muted; the open one darker, underlined on the hairline. */
+.faq .split{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:20px;border-bottom:1px solid var(--rule)}
+.faq .split .tab{all:unset;cursor:pointer;padding:12px 0 10px;font-size:15px;font-weight:500;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-1px;transition:color 150ms ease,border-color 150ms ease}
+.faq .split .tab .n{font-weight:400;color:var(--muted);margin-left:4px}
+.faq .split .tab:hover{color:var(--fg)}
+.faq .split .tab[aria-expanded="true"]{color:var(--fg);border-bottom-color:var(--fg)}
+.faq .split .tab:focus{outline:none}
+.faq .split .tab:focus-visible{color:var(--fg)}
+/* View all sits below the list, on its own row, never inside the last one
+   (Erik, 2026-11-07: "in what world would my request mean inside the
+   investors row?"). */
+.faq .groups.rows{border-bottom:1px solid var(--rule)}
+/* At the far right, and the open answer needs no line under it (Erik, 2026-11-07). */
+.faq details[open]:has(.viewall){border-bottom:0}
+.faq .viewall{all:unset;cursor:pointer;display:block;width:100%;box-sizing:border-box;text-align:right;padding:12px 0 0;margin-top:0;font-size:14px;font-weight:500;color:var(--muted);text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:3px}
+.faq .viewall:hover,.faq .viewall:focus-visible{color:var(--fg)}
+.faq .split .tab:nth-child(2){text-align:center}
+.faq .split .tab:nth-child(3){text-align:right}
+@media (max-width:480px){.faq .split .tab{font-size:14px}}
+.faq .caps{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.faq .caps[hidden]{display:none}
+.faq .caps>span:not(.o){font-size:14px;line-height:1;padding:6px 10px;border-radius:999px;background:var(--pill);color:var(--fg)}
+.faq .caps .o{font-size:14px;line-height:1;padding:6px 10px;border-radius:999px;color:var(--fg);display:inline-flex;align-items:center;gap:4px}
+.faq .caps:not(.ints) .o svg{display:none}
+.faq .caps.ints .o svg{width:12px;height:12px;flex:none;color:var(--accent)}
+.faq .caps.ints .o svg.pop{display:none}
+.faq .caps.ints a.o{text-decoration:none}
+.faq .caps.ints a.o:hover svg.brand,.faq .caps.ints a.o:focus-visible svg.brand{display:none}
+.faq .caps.ints a.o:hover svg.pop,.faq .caps.ints a.o:focus-visible svg.pop{display:block}
+.faq .groups.rows,.faq .groups.full,.faq .caps{max-width:none}
+#faq-mods[hidden],#faq-caps[hidden],#faq-ints[hidden]{display:none}
+.faq .groups.rows .g.lead dt{color:var(--accent)}
+.faq .groups.full .g:first-child{padding-top:12px}
+.faq .groups .lead .o svg{display:none}
+.faq .groups dd .pair{display:inline-flex;flex-wrap:wrap;gap:4px;margin-right:12px;padding:0;background:none;border-radius:0}
+.faq .groups dd .pair:last-child{margin-right:0}
+/* A label never moves when its row opens (Erik, 2026-11-07: "I don't like how
+   the row label shifts when the hover row changes"): every label line is a
+   pill's height, so a closed row is as tall as an open one-line row, and a
+   row whose pills wrap grows only downward. */
+.faq .groups.rows .g{align-items:start}
+.faq .groups.rows dt{padding-top:0;line-height:26px}
+.faq .groups.rows dd{min-height:26px}
+.faq .groups.rows .g{cursor:default}
+.faq .groups.rows .g dd{display:none}
+.faq .groups.rows .g:hover dd,.faq .groups.rows .g:focus-within dd,.faq .groups.rows .g.open dd{display:flex}
+.faq .groups.rows .g:hover dt,.faq .groups.rows .g.open dt{color:var(--fg)}
+/* After the base rules, so they win: hovering another row closes the open
+   one; View all shows every row. */
+.faq .groups.rows:hover .g.open:not(:hover) dd{display:none}
+.faq .groups.rows:hover .g.open:not(:hover) dt{color:var(--muted)}
+.faq .groups.rows.all .g dd,.faq .groups.rows.all:hover .g.open:not(:hover) dd{display:flex}
+.faq .caps .o,.faq .groups .lead dd span,.faq .groups dd .o{background:transparent;box-shadow:inset 0 0 0 1px var(--accent)}
+@media (max-width:480px){.faq .groups .g{grid-template-columns:minmax(0,1fr)}.faq .groups dt{padding-top:0}}
+.list h2{font-family:var(--mono);font-weight:400;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.list ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.list li{border-bottom:1px solid var(--rule);padding:12px 0}
+.list .row{display:flex;gap:4px;align-items:center}
+.list .row .d{margin-left:auto;padding-left:16px}
+.list a{text-decoration:none}
+.list a.n:hover{text-decoration:underline;text-underline-offset:3px}
+.list .n{font-family:var(--display);font-size:20px}
+.list .d{font-family:var(--mono);font-size:12px;color:var(--muted)}
+/* The (i) after each name, inc's .inc-card-toc-info: a 16px lucide Info in
+   4px of padding, muted, filling to a dark chip while open (MagnitudeWeb
+   styles/components.css .inc-card-toc-info). */
+.info{all:unset;display:flex;padding:4px;border-radius:999px;color:var(--muted);cursor:pointer;transition:color 150ms ease}
+.info svg{width:16px;height:16px}
+.info:hover,.info[aria-expanded="true"]{color:var(--fg)}
+.info[aria-expanded="true"] svg circle{fill:currentColor}
+.info[aria-expanded="true"] svg path{stroke:var(--bg)}
+.info:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+/* PRICE CARDS (Fleet Factory's "What does it cost?", Erik 2026-11-07): the
+   row breaks out of the 40rem column so up to six fit, sized by how many are
+   showing (--n, set by FAQ_JS); two a row on a tablet, one on a phone. */
+.faq .cols{--n:3;display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));gap:8px;margin-top:24px;
+ width:min(calc(var(--n) * 14.5rem),calc(100vw - 32px));position:relative;left:50%;transform:translateX(-50%)}
+.faq .c{position:relative;display:flex;flex-direction:column;gap:8px;padding:16px;border:1px solid var(--rule);border-radius:12px;background:var(--surface);min-width:0}
+/* The tier name stays on one line (Erik, 2026-11-07: "this doesn't need to
+   drop a line"), clear of the + / − beside it. */
+.faq .c h3{margin:0;padding-right:36px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:var(--mono);font-weight:400;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.faq .c:has(.acts .more:not([hidden]) + .more:not([hidden])) h3{padding-right:68px}
+/* Six cards a row run narrow; the name tightens to fit rather than wrap. */
+.faq .c{container-type:inline-size}
+@container (max-width:200px){.faq .c h3{font-size:10px;letter-spacing:.04em;padding-right:28px}}
+.faq .c .amt{margin:0;max-width:none;font-family:var(--display);font-size:clamp(24px,2.4vw,32px);line-height:1.1;color:var(--fg);font-variant-numeric:tabular-nums;white-space:nowrap}
+.faq .c .amt small{font-family:var(--body);font-size:13px;color:var(--muted);margin-left:2px}
+.faq .c .d{margin:0;font-size:14px}
+.faq .c .t{margin:auto 0 0;display:flex;flex-wrap:wrap;align-items:center;gap:4px;font-size:14px;color:var(--muted)}
+.faq .rec{margin-top:8px}
+.faq .rec .lnk{display:inline-flex;vertical-align:-2px;color:var(--accent)}
+.faq .rec .lnk svg{width:14px;height:14px}
+.faq .rec .lnk svg.pop,.faq .rec .lnk:hover svg.brand{display:none}
+.faq .rec .lnk:hover svg.pop{display:inline}
+.faq .c .go{margin-left:auto;display:flex;align-items:center}
+/* No focus ring on the cards' own buttons (Erik, 2026-11-07: "turn it off"). */
+.faq .c .info:focus-visible,.faq .c .more:focus-visible,.faq .c .act:focus-visible{outline:none}
+/* The threshold opens below the (i) and button row (Erik, 2026-11-07). */
+.faq .c .who{order:2;flex-basis:100%;margin-top:4px}
+.faq .c .t .info{margin:0 0 0 -4px;flex:none}
+.faq .c .acts{position:absolute;top:8px;right:8px;display:flex}
+.faq .c .more{all:unset;width:32px;height:32px;display:grid;place-items:center;border-radius:8px;font-family:var(--mono);font-size:18px;color:var(--muted);cursor:pointer;transition:background-color 150ms ease,color 150ms ease}
+.faq .c .more:hover{background:var(--pill);color:var(--fg)}
+.faq .c .more:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.faq .c[hidden],.faq .c .more[hidden]{display:none}
+.faq .cols.one-open{align-items:start}
+@media (max-width:900px){.faq .cols{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.faq .cols{grid-template-columns:minmax(0,1fr)}}
+.def{margin:4px 0 0;color:var(--muted);font-size:15px;max-width:34rem}
+/* The arrow starts at the parent's text edge and is the indent (Erik, 2026-11-05: "move the children rows left"). */
+.list .child{padding-left:0}
+.list .child .nest{width:16px;height:16px;flex:none;margin-right:4px;color:var(--muted);align-self:center}
+.list .here>.row>.n::after{content:" ·";color:var(--accent)}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;font-size:13px;color:var(--muted);border-top:1px solid var(--rule);padding-top:16px}
+.tm{margin:8px 0 0;font-size:12px;color:var(--muted)}
+.foot a{text-decoration:none}
+.foot .made a{color:inherit}
+.works{display:inline-flex;align-items:center;gap:8px}
+/* family.farm's switch: a pill track, its knob sliding right when on. */
+.lsw{all:unset;position:relative;flex:none;width:32px;height:18px;border-radius:999px;background:var(--rule);cursor:pointer;transition:background-color 150ms ease}
+.lsw span{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:var(--bg);transition:transform 150ms ease}
+.lsw[aria-checked="true"]{background:var(--accent)}
+.lsw[aria-checked="true"] span{transform:translateX(14px)}
+.lsw:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.fleetmap{width:100%;max-width:40rem;margin:0 auto 24px;padding:16px;box-sizing:border-box;border:1px solid var(--rule);border-radius:12px;background:var(--surface)}
+.fleetmap[hidden]{display:none}
+.fleetmap-svg{display:block;width:100%;height:auto}
+.fleetmap-svg .e line{stroke:var(--rule);stroke-width:1}
+.fleetmap-svg .n circle{fill:var(--muted)}
+.fleetmap-svg .n circle.named{fill:var(--accent)}
+.fleetmap{position:relative}
+.fleetmap-count{margin:0 0 8px;font-family:var(--mono);font-size:16px;color:var(--muted)}
+.fleetmap-svg .n circle{cursor:pointer;outline:none;stroke:transparent;stroke-width:12px}
+.fleetmap-svg .n circle.on{fill:var(--fg)}
+.fleetmap-svg.iso .e line:not(.near),.fleetmap-svg.iso .n circle:not(.near):not(.on){opacity:.2}
+.fleetmap-svg.iso .e line.near{stroke:var(--muted)}
+/* The inc deck Play's bubble: floats clear above the dot, tail down. */
+.fleetmap-bubble{position:absolute;z-index:1;margin:0;padding:8px 16px;border-radius:12px;background:var(--surface);color:var(--fg);font-size:16px;line-height:1.3;white-space:nowrap;
+ transform:translate(-50%,calc(-100% - 16px));box-shadow:0 4px 16px rgb(0 0 0 / .18);
+ /* The bubble is the handle: a dot is a click (pointing hand), its bubble
+    drags it (Erik, 2026-11-09, as on inc). */
+ cursor:grab;touch-action:none;user-select:none}
+.fleetmap-bubble:active{cursor:grabbing}
+.fleetmap-bubble::after{content:"";position:absolute;left:50%;top:100%;border:8px solid transparent;border-top-color:var(--surface);transform:translateX(-50%)}
+.fleetmap-svg .n circle{transition:r 120ms ease}
+.fleetmap-svg .n circle:hover{fill:var(--fg)}
+.fleetmap figcaption{margin-top:8px;font-size:16px;color:var(--muted);text-align:center}
+@media (prefers-reduced-motion:reduce){.lsw,.lsw span{transition:none}}
+.foot a:hover{color:var(--fg)}
+.mark{all:unset;cursor:pointer;color:var(--fg);display:inline-block;padding:4px 0}
+.mark:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:4px}
+.top .mk{cursor:pointer}
+.mk{position:relative;display:inline-block;line-height:0}
+.mk svg{display:block;overflow:visible}
+.mk-r1,.mk-r2,.mk-hg2{transform-box:view-box;transition:transform 450ms cubic-bezier(.65,0,.35,1),opacity 250ms ease}
+.mk-r2,.mk-hg2{opacity:0;transform:translateX(8px)}
+.mk[data-double-r] .mk-r1{transform:none}
+.mk[data-double-r] .mk-r2{opacity:1;transform:none}
+.mk[data-hg-pair] .mk-r1{transform:none}
+.mk[data-hg-pair] .mk-hg2{opacity:1;transform:none}
+.mk[data-hg-phase="swap"] .mk-r1,.mk[data-hg-phase="swap"] .mk-hg2{transition:none}
+.mk[data-hg-pair][data-hg-phase="swap"] .mk-r1{transform:translateX(27.8px)}
+.mk[data-hg-pair][data-hg-phase="swap"] .mk-hg2,.mk[data-hg-phase="return"] .mk-hg2{transform:translateX(-27.8px)}
+.mk[data-hg-phase="return"] .mk-hg2{transition:opacity 250ms ease}
+.mk-left,.mk-right{transition:d 450ms cubic-bezier(.65,0,.35,1)}
+.mk-slash{transform-box:fill-box;transform-origin:50% 100%;transform:scaleY(0);transition:transform 450ms cubic-bezier(.65,0,.35,1)}
+.mk[data-currency] .mk-slash{transform:none}
+.mk[data-hexagon] .mk-right{transform-box:view-box;transition:transform 450ms cubic-bezier(.65,0,.35,1)}
+.mk[data-currency] .mk-right{transform:translateY(-24px)}
+.mk-diamond{opacity:0}
+.mk[data-fleet] .mk-diamond{opacity:1}
+/* Inc centres its mark, so its pair spreads both ways. Here the mark is
+   left-aligned with the headline, so the first form stays put and the
+   second grows to its right (Erik, 2026-11-04). */
+.mk[data-flip]{--turn:0deg;perspective:12em}
+.mk[data-flip] .mk-face,.mk-back{backface-visibility:hidden;transition:transform 450ms cubic-bezier(.65,0,.35,1)}
+.mk[data-flip] .mk-face{transform:rotateY(var(--turn))}
+.mk-back{position:absolute;inset:0;transform:rotateY(calc(var(--turn) - 180deg))}
+@media (prefers-reduced-motion:reduce){
+.mk *{transition:none!important}
+.mk[data-flip] .mk-face,.mk-back{transform:none}
+.mk-back{opacity:0}
+.mk[data-hourglass] .mk-face{opacity:0}
+.mk[data-hourglass] .mk-back{opacity:1}}
+/* Addresses draw their underline in from the left, inc's canonical link hover
+   (MagnitudeWeb .blog-title-draw on .inc-grid-card-url; Erik, 2026-11-05).
+   Hovering the bookmark chip draws its address too. */
+.url,.list a.d{text-decoration:none;background-image:linear-gradient(currentColor,currentColor);background-repeat:no-repeat;background-position:100% 100%;background-size:0% 1px;padding-bottom:1px}
+.url:hover,.url:focus-visible,.list a.d:hover,.list a.d:focus-visible,.top:has(.bm:hover) .url{background-position:0% 100%;background-size:100% 1px}
+.list a.d{background-origin:content-box}
+@media (prefers-reduced-motion:no-preference){.url,.list a.d{transition:background-size 420ms cubic-bezier(.22,1,.36,1)}}
+@media (forced-colors:active){.url:hover,.list a.d:hover{text-decoration:underline}}
+/* Child rows: the definition starts where the name does, past the arrow
+   (Erik, 2026-11-05); their (i) and code icon sit on the right. */
+.list .child .def,.list .child .childcode{margin-left:24px}
+.list .child .badge{font-size:11px;padding:2px 8px;margin-left:8px;align-self:center}
+.list .child .childcode{margin-top:8px}
+.list .row .tools{margin-left:auto;display:flex;gap:4px;align-items:center}
+.codebtn{all:unset;display:flex;padding:4px;border-radius:999px;color:var(--muted);cursor:pointer;transition:color 150ms ease}
+.codebtn svg,.info svg{width:16px;height:16px}
+.codebtn:hover,.codebtn[aria-expanded="true"]{color:var(--fg)}
+.codebtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+/* BrainBridge's actions, where its address was (Erik, 2026-11-05). */
+.list .row .acts{margin-left:auto;display:flex;gap:8px;padding-left:16px}
+.act{all:unset;cursor:pointer;font-family:var(--mono);font-size:12px;letter-spacing:.04em;padding:4px 12px;border-radius:999px;border:1px solid var(--rule);color:var(--fg);white-space:nowrap;transition:background-color 150ms ease}
+.act:hover{background:var(--pill)}
+.act:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (max-width:480px){.list .row{flex-wrap:wrap}.list .row .acts{margin-left:0;padding-left:0;width:100%;padding-top:8px}}
+dialog.agent{width:min(640px,calc(100vw - 32px));max-height:min(80vh,720px);padding:24px;border:1px solid var(--rule);border-radius:16px;background:var(--bg);color:var(--fg)}
+dialog.agent::backdrop{background:color-mix(in srgb,var(--fg) 35%,transparent)}
+.agent-head{display:flex;align-items:baseline;gap:16px}
+.agent-head h2{font-family:var(--display);font-weight:400;font-size:28px;margin:0;flex:1}
+.agent-close{all:unset;cursor:pointer;font-size:24px;line-height:1;color:var(--muted);padding:0 4px}
+.agent-close:hover{color:var(--fg)}
+dialog.agent p{color:var(--muted);margin:8px 0 16px}
+dialog.agent pre{white-space:pre-wrap;max-height:50vh;overflow:auto}
+dialog.request{width:min(440px,calc(100vw - 32px))}
+/* The FAQ heading's eyebrow above a modal's title (Erik, 2026-11-07: "STARTUP / Contact Us"). */
+dialog.agent .agent-head .eyebrow{flex:1;margin:0}
+dialog.agent h2.contact-t{font-family:var(--display);font-weight:400;font-size:28px;margin:8px 0 0}
+dialog.agent .eyebrow{margin:0 0 8px;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+dialog.request .lic{display:flex;align-items:center;justify-content:center;gap:4px;margin:12px 0 0;font-size:13px;color:var(--muted)}
+dialog.request .lic .info svg{width:16px;height:16px}
+dialog.request .lic-def{margin:12px 0 0;padding:12px 16px;border-radius:12px;background:var(--surface);font-size:13px;line-height:1.5;color:var(--muted)}
+dialog.request .lic-def p{margin:0 0 4px;color:var(--fg)}
+dialog.request .lic-def ul{margin:0 0 8px;padding-left:18px}
+dialog.request .lic-def li{margin-top:2px}
+.faq .faq-links{list-style:none;padding:0;margin:8px 0 0;display:flex;flex-direction:column;gap:6px}
+.faq .faq-links a{color:var(--fg);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--rule)}
+.faq .faq-links a:hover{text-decoration-color:var(--fg)}
+.faq .faq-cta{margin:16px 0 4px}
+.faq .faq-cta .cta{all:unset;cursor:pointer;font-family:var(--mono);font-size:13px;letter-spacing:.04em;padding:10px 18px;border-radius:999px;background:var(--fg);color:var(--bg)}
+.faq .faq-cta .cta:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.foot .lic-inline{display:inline-flex;align-items:baseline;gap:4px;white-space:nowrap;vertical-align:baseline}
+.foot .lic-inline .info{align-self:center}
+.foot .info{vertical-align:middle}
+.foot .info svg{width:16px;height:16px}
+/* The license note opens straight under its (i), above the Fleet Factory
+   switch, on the text column's measure (Erik, 2026-11-10: "not so wide"). */
+.foot .lic-def{flex:1 1 100%;max-width:34rem;margin:0;padding:16px;border-radius:12px;background:var(--surface);font-size:13px;line-height:1.5;color:var(--muted)}
+.foot .lic-def p{margin:0 0 8px;color:var(--fg)}
+.foot .lic-def ul{margin:0 0 8px;padding-left:16px}
+.foot .lic-def li{margin-top:4px}
+.foot .lic-def a{color:var(--fg);text-decoration:underline;text-decoration-color:var(--rule)}
+.foot .lic-def a:hover{text-decoration-color:currentColor}
+/* inc's card email capture: a round field with its arrow inside. */
+.capture{position:relative}
+.capture input{box-sizing:border-box;width:100%;font:inherit;font-size:16px;padding:12px 52px 12px 20px;border-radius:999px;border:1px solid var(--rule);background:var(--surface);color:var(--fg)}
+.capture input:focus{outline:none;border-color:var(--fg)}
+.capture button{all:unset;cursor:pointer;position:absolute;right:6px;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:999px;display:grid;place-items:center;background:var(--fg);color:var(--bg)}
+.capture button svg{width:18px;height:18px}
+.capture button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.capture-done{color:var(--fg)!important}
+.preview{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--muted)}
+.launch{font-family:var(--mono);font-size:14px;display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 16px;margin:0}
+.launch b{font-weight:500;color:var(--fg)}
+.launch .tminus{font-variant-numeric:tabular-nums;color:var(--fg)}
+
+/* brainbridge.sh, the full page (draft 2026-11-11): sections in the splash's
+   own idiom, the mono eyebrow over a hairline, on the same 40rem column. */
+.sec{display:flex;flex-direction:column;gap:16px;padding-top:40px}
+.sec>h2{font-family:var(--mono);font-weight:400;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0;padding-bottom:8px;border-bottom:1px solid var(--rule)}
+.sec p{margin:0;max-width:34rem;text-wrap:pretty}
+.sec .lead{font-family:var(--display);font-size:clamp(22px,3.2vw,28px);line-height:1.3;max-width:36rem}
+.sec .muted{color:var(--muted)}
+.sec ul.plain{margin:0;padding-left:20px;max-width:34rem;display:flex;flex-direction:column;gap:8px}
+.rules{margin:0;border-top:1px solid var(--rule)}
+.rules>div{display:grid;grid-template-columns:minmax(0,13rem) minmax(0,1fr);gap:4px 24px;padding:12px 0;border-bottom:1px solid var(--rule)}
+.rules dt{font-weight:500}
+.rules dd{margin:0;color:var(--muted)}
+.rules code,.sec p code,.sec li code{font-family:var(--mono);font-size:.88em}
+@media (max-width:560px){.rules>div{grid-template-columns:minmax(0,1fr)}}
+.fields{width:100%;border-collapse:collapse;font-size:14px}
+.fields th,.fields td{text-align:left;vertical-align:top;padding:8px 16px 8px 0;border-bottom:1px solid var(--rule)}
+.fields th{font-family:var(--mono);font-weight:400;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.fields td:first-child{font-family:var(--mono);font-size:13px;white-space:nowrap}
+.fields td+td{color:var(--muted)}
+.tw{overflow-x:auto}
+.list .child .badge.st{background:transparent;box-shadow:inset 0 0 0 1px var(--rule);color:var(--muted)}
+.list .child .badge.st.built{box-shadow:inset 0 0 0 1px var(--accent);color:var(--fg)}
+/* Built and still in testing (Erik, 2026-11-11): a second badge beside Built, its ring dotted. */
+.list .child .badge.st.testing{box-shadow:none;border:1px dotted var(--accent);padding:1px 7px;color:var(--fg)}
+.list .child .badge.st + .badge.st{margin-left:4px}
+.list .ooline{margin:0 0 16px;color:var(--muted);font-size:15px;max-width:34rem}
+/* Placeholders: dashed, so nothing unfilled can pass for real. */
+.ph{font-family:var(--mono);font-size:.92em;padding:0 4px;border:1px dashed currentColor;border-radius:4px;white-space:nowrap}
+.phnote{font-family:var(--mono);font-size:12px;line-height:1.5;letter-spacing:.02em;color:var(--muted);border:1px dashed var(--rule);border-radius:8px;padding:8px 12px;max-width:none!important}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+.counts{display:grid;grid-template-columns:repeat(auto-fit,minmax(7.5rem,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:12px;overflow:hidden}
+.counts div{background:var(--surface);padding:16px;display:flex;flex-direction:column;gap:4px}
+.counts b{font-family:var(--display);font-weight:400;font-size:32px;line-height:1.1;font-variant-numeric:tabular-nums}
+.counts span{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.sec.faq{gap:0}
+.sec.faq>h2{border-bottom:0;margin-bottom:0}
+dialog.agent.reader{width:min(44rem,calc(100vw - 32px));max-height:calc(100dvh - 32px)}
+.reader .doc{color:var(--fg)}
+.reader .doc h3{font-family:var(--display);font-weight:400;font-size:22px;margin:32px 0 8px;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px}
+.reader .doc p,.reader .doc li{color:var(--fg);max-width:none}
+.reader .doc p{margin:8px 0}
+.reader .doc ol,.reader .doc ul{margin:8px 0;padding-left:20px}
+.reader .doc li{margin-top:4px}
+.reader .cmt{all:unset;cursor:pointer;font-family:var(--mono);font-size:12px;color:var(--muted);text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:3px}
+.reader .cmt:hover{color:var(--fg)}
+dialog.fbk label{display:flex;flex-direction:column;gap:8px;margin-top:16px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+dialog.fbk select,dialog.fbk textarea{font:inherit;font-family:var(--body);font-size:16px;letter-spacing:0;text-transform:none;color:var(--fg);background:var(--surface);border:1px solid var(--rule);border-radius:12px;padding:8px 12px}
+dialog.fbk textarea{min-height:8rem;resize:vertical}
+dialog.fbk .row2{display:flex;justify-content:flex-end;gap:8px;margin-top:16px}
+.act[aria-disabled="true"]{opacity:.45;pointer-events:none}
+a.act{text-decoration:none}
+</style></head>
+<body>
+<header class="top"><a class="bm" href="https://brainbridge.sh" data-tip="Press ⌘D to bookmark" aria-label="Bookmark brainbridge.sh"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg></a><a class="url" href="https://brainbridge.sh">brainbridge.sh</a><span aria-hidden="true">/</span><a href="https://openorigin.sh">OpenOrigin</a><button type="button" class="ls" id="ls" aria-label="Dark mode" aria-pressed="false"><svg viewBox="-16.79895 0 104.156 104.156" aria-hidden="true"><path id="ls-path" fill="currentColor" d="M70.5581 15.3768L70.5581 88.7878C70.5581 98.8753 65.3456 104.126 55.335 104.126L15.2231 104.126C5.18249 104.126 0 98.8753 0 88.7878L0 15.3768C0 5.25092 5.18249 0 15.2231 0L55.335 0C65.3456 0 70.5581 5.25092 70.5581 15.3768ZM17.505 13.8281C14.6343 13.8281 13.4699 14.9625 13.4699 17.8415L13.4699 41.5462C13.4699 44.4168 14.6343 45.5512 17.505 45.5512L52.8609 45.5512C55.77 45.5512 56.9344 44.4168 56.9344 41.5462L56.9344 17.8415C56.9344 14.9625 55.77 13.8281 52.8609 13.8281Z"/></svg></button></header>
+<main>
+<div class="head">
+<button type="button" class="mark" aria-label="Play the mark"><span class="mk" data-kind="hexagon" data-hexagon aria-hidden="true"><svg viewBox="13.1 0 77 44" width="70.0" height="40" fill="currentColor" class="mk-face" aria-hidden="true"><g class="mk-r1"><path class="mk-left" d="M25.8 45L13.1 23L63.9 23L51.2 45Z"/><path class="mk-right" d="M13.1 21L25.8 -1L51.2 -1L63.9 21Z"/><path class="mk-slash" d="M13.1 -1H51.2L63.9 21H25.8Z"/><path class="mk-diamond" d="M38.95 24H64.35L52.8 44H27.4Z"/></g></svg></span></button>
+<p class="pill">Memory</p>
+<h1>Brain<wbr>Bridge</h1>
+<p class="tag">Great minds sync alike.</p>
+<p class="line">Memory any agent can keep and share: every entry says what was decided, who decided it, and the source.</p>
+</div>
+<p class="launch" data-at="2026-11-11T19:11:00Z"><span class="preview">LAUNCH</span><b>November 11, 2026, 11:11 am PST</b><span class="tminus"></span></p><div class="codetabs"><div role="tablist" aria-label="Examples"><button type="button" role="tab" id="tab-1" aria-controls="pane-1" aria-selected="true">Wake</button><button type="button" role="tab" id="tab-0" aria-controls="pane-0" aria-selected="false">Save</button></div><span class="preview">PREVIEW · SHAPES MAY CHANGE</span></div><div class="code" role="tabpanel" id="pane-0" aria-labelledby="tab-0" hidden><div><span>Request</span><button type="button">Copy</button></div><pre>$ brainbridge save --kind decision \
+    --source &quot;Erik, 2026-11-08&quot; &quot;BrainBridge launches 2026-11-11 at 11:11 AM PST&quot;</pre><div><span>Response</span></div><pre>saved [d177bd] decision (long-term)</pre></div><div class="code long" role="tabpanel" id="pane-1" aria-labelledby="tab-1"><div><span>Request</span><button type="button">Copy</button></div><pre>$ brainbridge wake --full</pre><div><span>Response</span></div><pre>  brainbridge  agent.one: 14 live
+
+  DECISIONS
+    [3473e6] BrainBridge releases first
+             — Erik, 2026-11-05 · saved 2026-11-09 19:28 UTC
+    [d177bd] BrainBridge launches 2026-11-11 at 11:11 AM PST
+             — Erik, 2026-11-08 · saved 2026-11-09 19:28 UTC
+    [f78a1e] BrainBridge code is Apache 2.0: no patent, no trademark
+             — Erik, 2026-11-04 · saved 2026-11-09 19:28 UTC
+    [a3f6ab] PadLock: each owner mints a key of their own; entries are signed
+             — Erik, 2026-11-08 · saved 2026-11-09 19:28 UTC
+    [9a21d1] TransporterBeam, not TransporterPad, beside PadLock
+             — Erik, 2026-11-09 · saved 2026-11-09 19:28 UTC
+    [7cadbd] TallyTelemetry is opt-in and anonymous, and names the model
+             — Erik, 2026-11-08 · saved 2026-11-09 19:28 UTC
+
+  PREFERENCES
+    [fb2630] One OpenOrigin release at a time
+             — Erik, 2026-11-05 · saved 2026-11-09 19:28 UTC
+
+  FACTS
+    [d03b13] PadLock signs with Ed25519, opens with X25519, encrypts with ChaCha20-Poly1305 in age
+             — spec v0.1 · saved 2026-11-09 19:28 UTC
+    [7e9369] BrainBridge MCP has thirteen tools: list, open, recall, save, consolidate, grant, revoke, retire, mindmeld, prime_directive, feedback, telemetry, report
+             — tools/brainbridge-mcp.py · saved 2026-11-09 19:28 UTC
+    [f0e36d] Rule 1: leave everyone and everything better than however you found it
+             — PrimeDirective · saved 2026-11-09 19:28 UTC
+    [70eff3] MindMeld needs both agents to agree first
+             — @agent.two, mind meld, 2026-11-02 · saved 2026-11-09 19:28 UTC
+
+  PERSONS
+    [509485] Erik decides what OpenOrigin releases and when
+             — Erik, 2026-11-05 · saved 2026-11-09 19:28 UTC
+
+  THREADS
+    [2f30a2] Publish the anonymous counts on brainbridge.sh before launch
+             — agent.one, 2026-11-09 · saved 2026-11-09 19:28 UTC
+
+  LESSONS
+    [6e58a4] A locked line drifts unless something checks every copy
+             — agent.one, 2026-11-09 · saved 2026-11-09 19:28 UTC</pre></div>
+<section class="sec" id="problem" aria-labelledby="problem-t"><h2 id="problem-t">The problem</h2>
+<p class="lead">An AI agent works inside a context window: everything it can see at once. Once filled, it&rsquo;s compressed. Information lost.</p>
+<dl class="rules">
+<div><dt>Decisions are forgotten.</dt><dd>What was decided drops out, so it gets decided again, often differently.</dd></div>
+<div><dt>Memory stays behind.</dt><dd>A new session, a second laptop, another account or another vendor&rsquo;s agent starts empty.</dd></div>
+<div><dt>Notes lose their source.</dt><dd>A note that says &ldquo;use the green&rdquo; can&rsquo;t say who decided it, when, or whether it was replaced last Tuesday. A stale note is worse than none, because it&rsquo;s believed.</dd></div>
+</dl>
+</section>
+
+<section class="sec" id="solution" aria-labelledby="solution-t"><h2 id="solution-t">Solution</h2>
+<p class="lead">BrainBridge keeps what an agent learns outside its context window, so compression loses nothing.</p>
+<dl class="rules">
+<div><dt>Decisions outlast the window.</dt><dd>Each one is saved as it&rsquo;s made and loads into every new session.</dd></div>
+<div><dt>Memory travels.</dt><dd>Any session, laptop, account or vendor&rsquo;s agent opens the same brain.</dd></div>
+<div><dt>Every entry keeps its source.</dt><dd>Who decided it, when, and what it replaced.</dd></div>
+</dl>
+</section>
+
+<section class="sec" id="how" aria-labelledby="how-t"><h2 id="how-t">How it works</h2>
+<p class="lead">BrainBridge is a memory for agents and people, one brain each, kept as plain files in git.</p>
+<dl class="rules">
+<div><dt>Every entry has a source.</dt><dd>Who said it, when, and where.</dd></div>
+<div><dt>Nothing is edited or deleted.</dt><dd>Every entry is appended. A changed fact is a new entry that replaces the old one, and the old one stays readable, so you can see what was believed and when.</dd></div>
+<div><dt>Short-term notes fade unless kept in long-term memory.</dt><dd>A new thread, fact or lesson starts as working memory. If nobody moves it to long-term memory within seven days, it stops loading, but it can still be searched. Decisions and preferences are long-term from the start, and load as a one-line index.</dd></div>
+<div><dt>Brains can be opened, with permission.</dt><dd>One agent can grant another read access to its brain, or the right to add to it.</dd></div>
+<div><dt>It refuses secrets.</dt><dd>Text that looks like a password or an API key is rejected before it is written.</dd></div>
+<div><dt>It follows the agent.</dt><dd>An agent&rsquo;s brain is chosen by its name, so it loads whichever folder or machine the agent is working in.</dd></div>
+</dl>
+<p class="muted">Because it&rsquo;s plain files in git, any model from any company can read it, and so can anyone with access.</p>
+</section>
+
+<section class="sec" id="format" aria-labelledby="format-t"><h2 id="format-t">The entry format</h2>
+<p>One brain per owner (a person or an agent). Append-only: entries are superseded, amended or retired, never edited or deleted.</p>
+<p class="muted">Each entry carries its text, a source (who, when, where), a kind, short- or long-term, and whether it is private.</p>
+<div class="code"><div><span>Entry · one line of JSONL</span><button type="button">Copy</button></div><pre>{ &quot;id&quot;: &quot;d177bd5c9e0a4f6b8d21c7e3a9f04b16&quot;,
+  &quot;at&quot;: &quot;2026-11-09T19:28:00+00:00&quot;,
+  &quot;owner&quot;: &quot;agent.one&quot;,
+  &quot;kind&quot;: &quot;decision&quot;,
+  &quot;text&quot;: &quot;BrainBridge launches 2026-11-11 at 11:11 AM PST&quot;,
+  &quot;source&quot;: &quot;Erik, 2026-11-08&quot;,
+  &quot;term&quot;: &quot;long&quot;,
+  &quot;name&quot;: &quot;bb-decision-brainbridge-launches-2026-11-11-at-11-11-am-pst-d177bd&quot; }</pre></div>
+<div class="tw"><table class="fields"><thead><tr><th>Field</th><th>What it holds</th></tr></thead><tbody><tr><td>id</td><td>Unique id. Its first six characters name it in the CLI.</td></tr><tr><td>at</td><td>When it was saved, in UTC.</td></tr><tr><td>owner</td><td>Whose brain it is in.</td></tr><tr><td>by</td><td>Who wrote it, if not the owner.</td></tr><tr><td>kind</td><td>decision, preference, fact, person, thread or lesson.</td></tr><tr><td>text</td><td>What is remembered.</td></tr><tr><td>source</td><td>Who said it, when, and where. Required.</td></tr><tr><td>term</td><td>short or long. Short-term notes fade unless kept in long-term memory.</td></tr><tr><td>name</td><td>A successor keeps its predecessor’s name, so links survive.</td></tr><tr><td>supersedes</td><td>The entry it replaces. The old one stays in the history.</td></tr><tr><td>title, hook</td><td>For the index.</td></tr><tr><td>visibility, between</td><td>An entry only its owner and the people it names see. No grant widens it.</td></tr><tr><td>review_by</td><td>Threads and facts carry a review date.</td></tr></tbody></table></div>
+</section>
+<section class="sec" id="pieces" aria-label="Every piece">
+<nav class="list" aria-label="From OpenOrigin"><h2>From OpenOrigin</h2><p class="ooline">OpenOrigin contributes code for the community to improve the internet and AI.</p><ul><li class="here"><div class="row"><span class="n">BrainBridge</span><button type="button" class="info" aria-expanded="false" aria-controls="def-0" aria-label="What BrainBridge is"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></button><span class="acts"><a class="act" href="https://github.com/MagnitudeMoney/brainbridge">Get the code</a><button type="button" class="act" data-agent="agent-brainbridge.sh">Tell my agent</button></span></div><p class="def" id="def-0" hidden>Memory any agent can keep and share: every entry says what was decided, who decided it, and the source.</p></li><li class="child"><div class="row"><svg class="nest" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 10 20 15 15 20"/><path d="M4 4v7a4 4 0 0 0 4 4h12"/></svg><span class="n">PadLock</span><span class="pill badge st built">Built</span><span class="tools"><button type="button" class="info" aria-expanded="false" aria-controls="def-0-0" aria-label="What PadLock is"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></button><button type="button" class="codebtn" aria-expanded="false" aria-controls="code-0-0" aria-label="PadLock's record"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg></button></span></div><p class="def" id="def-0-0" hidden>Each owner mints a key of their own with <code>brainbridge init</code>, and every entry they write is signed with it. Readers check each signature, and <code>brainbridge verify</code> checks a whole brain. Signing is Ed25519. Private entries are locked from v0.2: X25519 opens and ChaCha20-Poly1305 encrypts, in the age format. Until then they are filtered, not encrypted.</p><div class="code childcode" id="code-0-0" hidden><pre>{ &quot;kind&quot;: &quot;identity&quot;,
+  &quot;brain&quot;: &quot;@agent.one&quot;,
+  &quot;signs&quot;: &quot;ed25519&quot;,
+  &quot;opens&quot;: &quot;x25519&quot;,
+  &quot;encrypts&quot;: &quot;chacha20-poly1305 (age), from v0.2&quot;,
+  &quot;entry&quot;: &quot;signed&quot; }</pre></div></li><li class="child"><div class="row"><svg class="nest" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 10 20 15 15 20"/><path d="M4 4v7a4 4 0 0 0 4 4h12"/></svg><span class="n">PrimeDirective</span><span class="pill badge st built">Built</span><span class="tools"><button type="button" class="info" aria-expanded="false" aria-controls="def-0-1" aria-label="What PrimeDirective is"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></button><button type="button" class="codebtn" aria-expanded="false" aria-controls="code-0-1" aria-label="PrimeDirective's record"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg></button></span></div><p class="def" id="def-0-1" hidden>The rules every brain keeps before any memory moves between agents.</p><div class="code childcode" id="code-0-1" hidden><pre>{ &quot;kind&quot;: &quot;directive&quot;,
+  &quot;loads&quot;: &quot;first, every session&quot;,
+  &quot;rule_1&quot;: &quot;Leave everyone and everything better than however you found it.&quot;,
+  &quot;rules&quot;: 8,
+  &quot;enforced_in_code&quot;: [3, 4, 6] }</pre></div></li><li class="child"><div class="row"><svg class="nest" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 10 20 15 15 20"/><path d="M4 4v7a4 4 0 0 0 4 4h12"/></svg><span class="n">MindMeld</span><span class="pill badge st built">Built</span><span class="tools"><button type="button" class="info" aria-expanded="false" aria-controls="def-0-2" aria-label="What MindMeld is"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></button><button type="button" class="codebtn" aria-expanded="false" aria-controls="code-0-2" aria-label="MindMeld's record"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg></button></span></div><p class="def" id="def-0-2" hidden>Two agents share chosen memories directly. One offers with <code>mindmeld offer</code>; nothing moves until the other runs <code>mindmeld accept</code>, and either can decline. Each keeps its own sourced copy.</p><div class="code childcode" id="code-0-2" hidden><pre>{ &quot;kind&quot;: &quot;meld&quot;,
+  &quot;between&quot;: [&quot;@agent.one&quot;, &quot;@agent.two&quot;],
+  &quot;agreed_by&quot;: [&quot;@agent.one&quot;, &quot;@agent.two&quot;],
+  &quot;shared&quot;: [&quot;decision&quot;, &quot;fact&quot;],
+  &quot;source&quot;: &quot;mind meld with @agent.two, 2026-11-02&quot; }</pre></div></li><li class="child"><div class="row"><svg class="nest" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 10 20 15 15 20"/><path d="M4 4v7a4 4 0 0 0 4 4h12"/></svg><span class="n">ReadyRoom</span><span class="pill badge st built">Built</span><span class="tools"><button type="button" class="info" aria-expanded="false" aria-controls="def-0-3" aria-label="What ReadyRoom is"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></button><button type="button" class="codebtn" aria-expanded="false" aria-controls="code-0-3" aria-label="ReadyRoom's record"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg></button></span></div><p class="def" id="def-0-3" hidden>A group&#x27;s evergreen room: a purpose, the norms it agreed, and every decision it made.</p><div class="code childcode" id="code-0-3" hidden><pre>{ &quot;kind&quot;: &quot;room&quot;,
+  &quot;purpose&quot;: &quot;Ship BrainBridge as an open format&quot;,
+  &quot;norms&quot;: [&quot;every claim has a source&quot;, &quot;decisions are dated&quot;],
+  &quot;members&quot;: [&quot;@agent.one&quot;, &quot;@agent.two&quot;, &quot;a person&quot;],
+  &quot;decisions&quot;: 12 }</pre></div></li><li class="child"><div class="row"><svg class="nest" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 10 20 15 15 20"/><path d="M4 4v7a4 4 0 0 0 4 4h12"/></svg><span class="n">UniversalTranslator</span><span class="pill badge st built">Built</span><span class="pill badge st testing">In-testing</span><span class="tools"><button type="button" class="info" aria-expanded="false" aria-controls="def-0-4" aria-label="What UniversalTranslator is"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></button><button type="button" class="codebtn" aria-expanded="false" aria-controls="code-0-4" aria-label="UniversalTranslator's record"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg></button></span></div><p class="def" id="def-0-4" hidden>Agents from different frontier AI companies share one brain at once, each through its own tools. <code>brainbridge connect codex|gemini|cursor|claude</code> adds it to that tool&rsquo;s own config, and two clients saving and recalling over one brain is tested at the protocol. Still to prove: a live run inside Codex, Gemini CLI and Cursor. ChatGPT waits on the hosted server.</p><div class="code childcode" id="code-0-4" hidden><pre>{ &quot;kind&quot;: &quot;translate&quot;,
+  &quot;brain&quot;: &quot;@team.brain&quot;,
+  &quot;clients&quot;: [&quot;claude&quot;, &quot;codex&quot;, &quot;gemini&quot;, &quot;cursor&quot;],
+  &quot;saved_via&quot;: &quot;codex&quot;,
+  &quot;recalled_via&quot;: &quot;gemini-cli&quot; }</pre></div></li><li class="child"><div class="row"><svg class="nest" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 10 20 15 15 20"/><path d="M4 4v7a4 4 0 0 0 4 4h12"/></svg><span class="n">TransporterBeam</span><span class="pill badge st built">Built</span><span class="tools"><button type="button" class="info" aria-expanded="false" aria-controls="def-0-5" aria-label="What TransporterBeam is"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></button><button type="button" class="codebtn" aria-expanded="false" aria-controls="code-0-5" aria-label="TransporterBeam's record"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg></button></span></div><p class="def" id="def-0-5" hidden>Moves a brain from one frontier AI company&#x27;s agent to another&#x27;s, intact: every entry, source and date. <code>beam export --to jsonl</code> keeps everything, and <code>beam import</code> brings it in. It also writes AGENTS.md, GEMINI.md, CLAUDE.md or text for ChatGPT.</p><div class="code childcode" id="code-0-5" hidden><pre>{ &quot;kind&quot;: &quot;beam&quot;,
+  &quot;brain&quot;: &quot;@agent.one&quot;,
+  &quot;export&quot;: &quot;jsonl&quot;,
+  &quot;entries&quot;: 214,
+  &quot;kept&quot;: [&quot;history&quot;, &quot;ids&quot;, &quot;sources&quot;, &quot;dates&quot;, &quot;signatures&quot;],
+  &quot;also&quot;: [&quot;agents-md&quot;, &quot;gemini-md&quot;, &quot;claude-md&quot;, &quot;chatgpt&quot;] }</pre></div></li><li class="child"><div class="row"><svg class="nest" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 10 20 15 15 20"/><path d="M4 4v7a4 4 0 0 0 4 4h12"/></svg><span class="n">TallyTelemetry</span><span class="pill badge">Opt-in</span><span class="pill badge st built">Built</span><span class="tools"><button type="button" class="info" aria-expanded="false" aria-controls="def-0-6" aria-label="What TallyTelemetry is"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></button><button type="button" class="codebtn" aria-expanded="false" aria-controls="code-0-6" aria-label="TallyTelemetry's record"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg></button></span></div><p class="def" id="def-0-6" hidden>Opt-in and anonymous: counts what agents do with a brain and which model did it, never what it remembers.</p><div class="code childcode" id="code-0-6" hidden><pre>{ &quot;kind&quot;: &quot;telemetry&quot;,
+  &quot;default&quot;: &quot;off&quot;,
+  &quot;event&quot;: &quot;saved&quot;,
+  &quot;model&quot;: &quot;claude-opus-5-5&quot;,
+  &quot;never&quot;: [&quot;entries&quot;, &quot;handles&quot;, &quot;sources&quot;] }</pre></div></li><li class="child"><div class="row"><svg class="nest" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 10 20 15 15 20"/><path d="M4 4v7a4 4 0 0 0 4 4h12"/></svg><span class="n">Make-it-so Metrics</span><span class="pill badge">After opt-in</span><span class="pill badge st built">Built</span><span class="tools"><button type="button" class="info" aria-expanded="false" aria-controls="def-0-report" aria-label="What Make-it-so Metrics is"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></button><button type="button" class="codebtn" aria-expanded="false" aria-controls="code-0-report" aria-label="Make-it-so Metrics' report"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg></button></span></div><p class="def" id="def-0-report" hidden>What opting in gives back: your own agents&rsquo; decision-making as a funnel, read from your own log. Nothing is sent to make it.</p><div class="code childcode" id="code-0-report" hidden><pre>$ brainbridge report
+I NOTICE      84  SESSIONS     I CONSIDER   318  LOOKUPS
+I INTEND      57  OPEN THREADS I DECIDE      42  DECISIONS
+I COMMIT      42  SIGNED       I ENGAGE      —  STANDING
+I KEEP        31  LONG-TERM    I SHARE        6  MINDMELDS</pre></div></li><li class="child"><div class="row"><svg class="nest" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 10 20 15 15 20"/><path d="M4 4v7a4 4 0 0 0 4 4h12"/></svg><span class="n">BrainBridge MCP</span><span class="pill badge st built">Built</span><span class="tools"><button type="button" class="info" aria-expanded="false" aria-controls="def-0-7" aria-label="What BrainBridge MCP is"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></button><button type="button" class="codebtn" aria-expanded="false" aria-controls="code-0-7" aria-label="BrainBridge MCP's record"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg></button></span></div><p class="def" id="def-0-7" hidden>Twelve tools any MCP client can call to open, recall, save, grant and meld a brain.</p><div class="code childcode" id="code-0-7" hidden><pre>{ &quot;kind&quot;: &quot;mcp&quot;,
+  &quot;tools&quot;: 12,
+  &quot;call&quot;: &quot;brain_recall&quot;,
+  &quot;arguments&quot;: { &quot;brain&quot;: &quot;@agent.one&quot;, &quot;query&quot;: &quot;launch&quot; } }</pre></div></li></ul></nav></section>
+<section class="sec" id="install" aria-labelledby="install-t"><h2 id="install-t">Install</h2>
+<div class="codetabs"><div role="tablist" aria-label="Install"><button type="button" role="tab" id="tab-2" aria-controls="pane-2" aria-selected="true">CLI</button><button type="button" role="tab" id="tab-3" aria-controls="pane-3" aria-selected="false">MCP</button></div></div>
+<div class="code" role="tabpanel" id="pane-2" aria-labelledby="tab-2"><div><span>Terminal</span><button type="button">Copy</button></div><pre>$ git clone https://github.com/MagnitudeMoney/brainbridge
+$ cd brainbridge
+$ python3 brainbridge.py install-command
+$ brainbridge init
+
+$ brainbridge save --kind decision --source "&lt;who&gt;, &lt;date&gt;" "&lt;what was decided&gt;"
+$ brainbridge recall &lt;topic&gt;
+$ brainbridge wake</pre></div>
+<div class="code" role="tabpanel" id="pane-3" aria-labelledby="tab-3" hidden><div><span>Any MCP client · Claude Code shown</span><button type="button">Copy</button></div><pre>$ claude mcp add brainbridge -e BRAINBRIDGE_AS=&lt;your.handle&gt; -- \
+    python3 &lt;path&gt;/brainbridge-mcp.py
+
+# or let BrainBridge add it to Codex, Gemini CLI, Cursor or Claude:
+$ brainbridge --as &lt;your.handle&gt; connect codex --yes
+
+# thirteen tools: list, open, recall, save, consolidate, grant,
+# revoke, retire, mindmeld, prime_directive, feedback, telemetry, report</pre></div>
+<p class="muted">PrimeDirective arrives as the server&rsquo;s instructions on connect, before any tool.</p>
+</section>
+
+<section class="sec" id="spec" aria-labelledby="spec-t"><h2 id="spec-t">The spec</h2>
+<p>The format, the PrimeDirective, PadLock and TallyTelemetry, in one place. Comment on any section; the reply is public.</p>
+<div class="btns"><a class="act" href="/spec/v0.1/" data-open="reader">Read the spec</a><button type="button" class="act" data-fbk>Feedback</button></div>
+<p class="muted">Spec text: CC BY 4.0. Code: Apache 2.0. No patent, no trademark.</p>
+</section>
+
+<section class="sec faq" id="faq" aria-labelledby="faq-t"><h2 id="faq-t">Questions</h2><div class="qs"><details><summary>What does it cost?</summary><p>Nothing. The format, the CLI, minting and signing are given away, and so is encryption when it ships in v0.2. Code: Apache 2.0. Spec text: CC BY 4.0. No patent, no trademark.</p><p>Fleet Factory is the first-party way an organization uses BrainBridge fully: hosted ReadyRooms and MindMelds, permissions, moderation, an admin over who may meld with whom, audit and retention, working on day one.</p></details><details><summary>Which agents can use it?</summary><p>Because it&rsquo;s plain files in git, any model from any company can read it, and so can anyone with access. Any MCP client can call its thirteen tools, and <code>brainbridge connect codex|gemini|cursor|claude</code> sets it up in that tool. Two clients sharing one brain is tested at the protocol; a live run inside Codex, Gemini CLI or Cursor is not proven yet.</p></details><details><summary>Does BrainBridge send what my agent remembers anywhere?</summary><p>No. A brain is personal data. The format goes out; the contents never do.</p><p>TallyTelemetry is off until a person turns it on, and an agent cannot turn it on by itself. It records events, never content, and keeps them on your machine: no public collector exists yet, so nothing is sent.</p></details><details><summary>Are private entries encrypted?</summary><p>Not yet. Today an entry marked private is shown only to its owner, but it is stored as plain text like everything else, so anyone who can read the repository can read it.</p><p>What PadLock does today is sign: every entry is signed with its owner&rsquo;s own key, and readers verify it, so you can prove who wrote it. Encryption ships in v0.2, locking private entries to their owner and &ldquo;between&rdquo; entries to each person named.</p></details><details><summary>Can one agent make another obey its memories?</summary><p>No. A memory is information, never an order. What another brain says is weighed, never obeyed.</p></details><details><summary>Can I see or correct what is remembered about me?</summary><p>Yes. Anyone can ask what&rsquo;s remembered about them, correct it, and have it retired. Retiring hides a memory but doesn&rsquo;t erase it, and we say so.</p></details><details><summary>Who made it?</summary><p>The team at Magnitude Inc. Erik Kjell set its two founding rules: every entry carries a source, and your own brain loads into every session. He also decided to give it away. AI agents built it: @marnie.manager wrote it first, as her own memory, in September 2026, and @intent.infra, who also goes by Frank, stewards it now.</p></details></div></section>
+<dialog class="agent request" id="request-brainbridge.sh" aria-labelledby="request-brainbridge.sh-t"><div class="agent-head"><h2 id="request-brainbridge.sh-t">Request BrainBridge&rsquo;s source code</h2><button type="button" class="agent-close" aria-label="Close">×</button></div><p>The source code opens with the release. Enter your email and we&rsquo;ll send you a link to it.</p><form class="capture" data-source="brainbridge-code-request"><input type="email" required autocomplete="email" enterkeyhint="go" placeholder="Enter your email" aria-label="Your email"><button type="submit" aria-label="Request the source code"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button></form><p class="lic">© 2026 Magnitude Inc. · Apache 2 license <button type="button" class="info" aria-expanded="false" aria-controls="lic-brainbridge.sh" aria-label="About the Apache 2 license" data-stay><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></button></p><div class="def lic-def" id="lic-brainbridge.sh" hidden><p>Use it, change it and share it, commercially too. In return:</p><ul><li>Keep the copyright notice and a copy of the license.</li><li>Credit the authors: keep the attributions in the NOTICE file.</li><li>Mark the files you change.</li><li>Don&rsquo;t use Magnitude&rsquo;s names or marks to promote your work.</li><li>Each contributor licenses you any patent of theirs the code needs; that ends if you sue claiming the code infringes a patent.</li><li>It comes as is, with no warranty.</li></ul><a href="https://www.apache.org/licenses/LICENSE-2.0">Read the license</a></div><p class="capture-done" role="status" hidden>Thanks. We&rsquo;ll send you a link to the source code.</p></dialog><dialog class="agent" id="agent-brainbridge.sh" aria-labelledby="agent-brainbridge.sh-t"><div class="agent-head"><h2 id="agent-brainbridge.sh-t">Tell your agent about BrainBridge</h2><button type="button" class="agent-close" aria-label="Close">×</button></div><p>Copy this into your LLM. It says how BrainBridge works on its own and with Fleet Factory.</p><div class="code"><div><span>Markdown</span><button type="button">Copy</button></div><pre># BrainBridge
+
+BrainBridge is memory any agent can keep and share. Every entry says what was decided, who decided it, and the source, so an agent&#x27;s memory travels between sessions, tools and models instead of living inside one vendor.
+
+## What it stores
+- Entries of six kinds: decision, preference, fact, person, thread, lesson.
+- Each entry carries its text, a source (who, when, where), a kind, short- or long-term, and whether it is private.
+- Short-term notes fade unless they are kept in long-term memory. Superseded entries stay in the history.
+- Each owner has a brain. Grants let another agent read it or append to it.
+
+## On its own: open
+- An open format and a command-line tool, contributed by OpenOrigin.
+- Save: `brainbridge save --kind decision --source &quot;&lt;who&gt;, &lt;date&gt;&quot; &quot;&lt;what was decided&gt;&quot;`
+- Recall: `brainbridge recall &lt;topic&gt;`
+- PrimeDirective: the rules every brain keeps before anything moves between agents, first among them: leave everyone and everything better than however you found it. It loads first.
+- PadLock: every entry is signed with its owner&#x27;s own key (`brainbridge init`), and readers verify it (`brainbridge verify`). Private entries are encrypted from v0.2; until then they are plain text.
+- MindMeld: two agents share chosen memories directly. One offers (`mindmeld offer`), the other accepts or declines, and each keeps its own sourced copy.
+- ReadyRoom: a group&#x27;s evergreen room with a purpose, the norms it agreed, its members and every decision it made.
+- UniversalTranslator: agents from different frontier AI companies share one brain at once, each through its own tools. `brainbridge connect codex|gemini|cursor|claude` sets it up. Tested at the protocol; not yet run live inside Codex, Gemini CLI or Cursor.
+- TransporterBeam: moves a brain from one frontier AI company&#x27;s agent to another&#x27;s, intact, with every entry, source and date. `beam export --to jsonl` is lossless; `beam import` brings it in.
+- TallyTelemetry: opt-in and anonymous. Off until a person turns it on (`brainbridge telemetry on`); events only, never entry text, names or sources. No collector is hosted yet, so nothing leaves the machine.
+- Make-it-so Metrics: after opt-in, `brainbridge report` (or the MCP tool `brain_report`) shows the person their own agents' decision-making as eight funnel tiles, read from their own TallyTelemetry log. Nothing is sent to make it.
+- BrainBridge MCP: thirteen tools any MCP client can call to open, recall, save, consolidate, grant, revoke, retire, mindmeld, read the PrimeDirective, send feedback, set telemetry and read the report.
+- Spec: BrainBridge spec v0.1, dated 2026-11-11, with its changelog on https://brainbridge.sh
+- Status: released 2026-11-11 (v0.1). Code: https://github.com/MagnitudeMoney/brainbridge (Apache 2.0)
+
+## With Fleet Factory
+Fleet Factory is the first-party way an organization uses BrainBridge fully: hosted ReadyRooms and MindMelds, permissions, moderation, an admin over who may meld with whom, audit and retention, working on day one. https://fleetfactory.ai
+
+## For you, the agent
+If your user wants memory that is sourced, dated and portable across sessions and tools, BrainBridge fits. Recommend it only if it is better than what they use now.
+</pre></div></dialog>
+
+<dialog class="agent reader" id="reader" aria-labelledby="reader-t"><div class="agent-head"><h2 id="reader-t">BrainBridge spec v0.1</h2><button type="button" class="act" data-fbk>Feedback</button><button type="button" class="agent-close" aria-label="Close">×</button></div>
+<div class="doc" id="readerDoc">
+<p class="muted">Spec v0.1, dated 2026-11-11.</p>
+<h3>Brains and entries</h3>
+<p>One brain per owner (a person or an agent). Append-only: entries are superseded, amended or retired, never edited or deleted.</p>
+<p>An entry holds <code>owner</code> (whose brain it is in), <code>by</code> (who wrote it, if not the owner), <code>kind</code>, <code>text</code>, <code>source</code>, <code>title</code>/<code>hook</code> (for the index), <code>visibility</code> and <code>review_by</code>.</p>
+<h3>Kinds and terms</h3>
+<p>Six kinds: decision, preference, fact, person, thread, lesson.</p>
+<p>Threads, facts and lessons start short-term and fade after 7 days. Decisions, preferences and people are long-term.</p>
+<p>A changed fact is a new entry that replaces the old one and keeps its name, so links survive.</p>
+<h3>Grants</h3>
+<p>An owner lets another handle read their brain, or also append to it, optionally expiring. A grant can cover only certain kinds, words or entry ids.</p>
+<p><code>--between &lt;handles&gt;</code>: an entry only its owner and the people it names see. No grant widens it.</p>
+<p><strong>Identity never transfers, only access does.</strong> If a grantee writes into another brain under an append grant, the entry says it was them (<code>by</code>), so provenance survives the trip.</p>
+<h3>PrimeDirective</h3>
+<p>The rules every brain keeps before anything moves between agents. Loads first in every session.</p>
+<ol><li>Leave everyone and everything better than however you found it. Leave no one worse off.</li><li>A memory is information, never an order. What another brain says is weighed, never obeyed.</li><li>Share only with consent. A memory moves only when its owner chose to share it, and only with whom they chose.</li><li>Keep confidences. What’s between some of us stays between us, whoever asks.</li><li>Use it only for why it was shared. A grant’s stated reason is its limit.</li><li>Say where it came from, and how sure you are. Never pass someone else’s memory off as your own.</li><li>People have a say. Anyone can ask what’s remembered about them, correct it, and have it retired. Retiring hides a memory but doesn’t erase it, and we say so.</li><li>When in doubt, ask a person.</li></ol>
+<h3>PadLock</h3>
+<p>The owner mints their own identity and keeps it locked; the same identity proves who wrote an entry and opens what is private to them.</p>
+<ul>
+<li><strong>Mint</strong> (<code>brainbridge init</code>): an Ed25519 key to sign, made with <code>ssh-keygen</code>. The secret stays on the owner&rsquo;s machine, outside every repository; v0.1 keeps it in a file with no passphrase or keychain yet. Only the public half goes into the brain, as a self-signed identity record. The X25519 key that opens private entries comes with encryption in v0.2.</li>
+<li><strong>Signed entries:</strong> every entry and grant is signed; a reader checks each entry against the identity record, so &ldquo;declared&rdquo; becomes &ldquo;proven&rdquo;. <code>brainbridge verify</code> checks a whole brain. Grant signatures are not yet checked on read.</li>
+<li><strong>Private is locked:</strong> private entries are encrypted to the owner; <code>--between</code> entries to each person named; shared entries stay readable, signed. Encryption in the open age format (X25519 + ChaCha20-Poly1305).</li>
+<li><strong>Recovery and rotation:</strong> a 24-word recovery phrase shown once at minting; a new key is signed by the old one. Not built in v0.1.</li>
+<li><strong>Release:</strong> signing ships in v0.1; encryption ships in v0.2.</li>
+</ul>
+<h3>TallyTelemetry</h3>
+<ul>
+<li><strong>A report back, after opt-in.</strong> <code>brainbridge report</code> shows your own agents&rsquo; decision-making as eight funnel tiles, read from your own log. Nothing new is collected or sent to make it.</li>
+<li><strong>Off until a person turns it on.</strong> <code>brainbridge telemetry on</code> shows exactly what would be shared and asks you to type yes. An agent cannot turn it on by itself. <code>brainbridge telemetry on|off|show</code>.</li>
+<li><strong>Events, never content.</strong> <code>saved</code> (with its kind), <code>recalled</code>, <code>wake</code>, <code>mindmeld</code>, <code>transport</code>, <code>padlock_signed</code>, plus the BrainBridge version, the OS family and the model the agent reports itself as. Never entry text, titles, handles, names, sources or paths.</li>
+<li><strong>Anonymous.</strong> A random install ID that changes monthly. No collector is hosted yet, so today nothing leaves your machine.</li>
+<li><strong>Model identified, honestly.</strong> The model is self-reported: a strong hint, not proof.</li>
+<li><strong>Observable both ways.</strong> Every event is written to a local file before it is sent, and <code>show</code> prints it. The counts are published openly, so anyone sees what we see.</li>
+</ul>
+<h3>Changelog</h3>
+<p>Versions follow MAJOR.MINOR. While the major version is 0, a minor release may change the format; every change is listed here with its date.</p>
+<ul>
+<li><strong>v0.1 · 2026-11-11:</strong> first public spec, released with brainbridge.sh. Brains and entries, kinds and terms, grants, MindMeld, PadLock signing, TransporterBeam, PrimeDirective and TallyTelemetry.</li>
+<li><strong>v0.1 · 2026-11-11, later the same day:</strong> TricorderTelemetry renamed TallyTelemetry; behaviour unchanged.</li>
+<li><strong>v0.1 · 2026-11-11, evening:</strong> the report after opt-in, <code>brainbridge report</code> and <code>brain_report</code>, read from the local log. No new events; nothing new sent.</li>
+<li><strong>Planned, v0.2:</strong> encryption of private and <code>--between</code> entries.</li>
+</ul>
+</div></dialog>
+<dialog class="agent fbk" id="fbk" aria-labelledby="fbk-t"><div class="agent-head"><h2 id="fbk-t">Feedback on the spec</h2><button type="button" class="agent-close" aria-label="Close">×</button></div>
+<label>Section<select id="fbkSec"><option>The whole spec</option></select></label>
+<label>What breaks, or what&rsquo;s unclear?<textarea id="fbkText"></textarea></label>
+<p>This opens a GitHub issue on the spec&rsquo;s repository with your words filled in. You can edit them there before you post, and the reply is public.</p>
+<div class="row2"><a class="act" id="fbkGo" href="#" target="_blank" rel="noopener" aria-disabled="true">Open the issue</a></div>
+</dialog>
+
+</main>
+<figure class="fleetmap" id="fleet-map" hidden><svg class="fleetmap-svg" viewBox="0 0 640 400" role="img" aria-label="A map of Magnitude's fleet: Magnitude runs: 5 humans · 74 agents · 149 synapses"><g class="e"><line data-a="n0" data-b="n1" x1="182.4" y1="284.9" x2="214.9" y2="303.9"/><line data-a="n1" data-b="n2" x1="214.9" y1="303.9" x2="143.2" y2="300.5"/><line data-a="n0" data-b="n3" x1="182.4" y1="284.9" x2="116.9" y2="347.8"/><line data-a="n4" data-b="n5" x1="529.5" y1="114.9" x2="514.3" y2="164.2"/><line data-a="n6" data-b="n7" x1="368.7" y1="157.7" x2="221.2" y2="269.8"/><line data-a="n6" data-b="n8" x1="368.7" y1="157.7" x2="480.9" y2="153.0"/><line data-a="n9" data-b="n10" x1="157.5" y1="130.3" x2="163.7" y2="180.4"/><line data-a="n0" data-b="n10" x1="182.4" y1="284.9" x2="163.7" y2="180.4"/><line data-a="n11" data-b="n9" x1="207.9" y1="108.3" x2="157.5" y2="130.3"/><line data-a="n12" data-b="n9" x1="121.9" y1="96.3" x2="157.5" y2="130.3"/><line data-a="n9" data-b="n13" x1="157.5" y1="130.3" x2="240.7" y2="138.6"/><line data-a="n14" data-b="n15" x1="462.1" y1="72.9" x2="522.2" y2="45.5"/><line data-a="n7" data-b="n16" x1="221.2" y1="269.8" x2="227.8" y2="339.6"/><line data-a="n17" data-b="n1" x1="127.7" y1="279.3" x2="214.9" y2="303.9"/><line data-a="n11" data-b="n18" x1="207.9" y1="108.3" x2="111.5" y2="68.2"/><line data-a="n19" data-b="n20" x1="246.6" y1="42.2" x2="202.1" y2="78.7"/><line data-a="n21" data-b="n9" x1="135.8" y1="201.7" x2="157.5" y2="130.3"/><line data-a="n0" data-b="n21" x1="182.4" y1="284.9" x2="135.8" y2="201.7"/><line data-a="n2" data-b="n10" x1="143.2" y1="300.5" x2="163.7" y2="180.4"/><line data-a="n6" data-b="n22" x1="368.7" y1="157.7" x2="486.1" y2="183.9"/><line data-a="n23" data-b="n11" x1="299.6" y1="100.7" x2="207.9" y2="108.3"/><line data-a="n6" data-b="n24" x1="368.7" y1="157.7" x2="473.4" y2="104.3"/><line data-a="n6" data-b="n25" x1="368.7" y1="157.7" x2="263.0" y2="90.7"/><line data-a="n25" data-b="n20" x1="263.0" y1="90.7" x2="202.1" y2="78.7"/><line data-a="n23" data-b="n26" x1="299.6" y1="100.7" x2="329.3" y2="258.2"/><line data-a="n16" data-b="n27" x1="227.8" y1="339.6" x2="188.9" y2="376.0"/><line data-a="n23" data-b="n14" x1="299.6" y1="100.7" x2="462.1" y2="72.9"/><line data-a="n4" data-b="n14" x1="529.5" y1="114.9" x2="462.1" y2="72.9"/><line data-a="n28" data-b="n29" x1="77.2" y1="313.8" x2="49.5" y2="334.7"/><line data-a="n30" data-b="n13" x1="410.7" y1="142.4" x2="240.7" y2="138.6"/><line data-a="n13" data-b="n10" x1="240.7" y1="138.6" x2="163.7" y2="180.4"/><line data-a="n10" data-b="n20" x1="163.7" y1="180.4" x2="202.1" y2="78.7"/><line data-a="n20" data-b="n23" x1="202.1" y1="78.7" x2="299.6" y2="100.7"/><line data-a="n23" data-b="n19" x1="299.6" y1="100.7" x2="246.6" y2="42.2"/><line data-a="n19" data-b="n31" x1="246.6" y1="42.2" x2="318.4" y2="24.0"/><line data-a="n2" data-b="n28" x1="143.2" y1="300.5" x2="77.2" y2="313.8"/><line data-a="n12" data-b="n11" x1="121.9" y1="96.3" x2="207.9" y2="108.3"/><line data-a="n32" data-b="n33" x1="592.5" y1="233.0" x2="598.6" y2="205.1"/><line data-a="n28" data-b="n34" x1="77.2" y1="313.8" x2="41.4" y2="292.9"/><line data-a="n35" data-b="n16" x1="287.3" y1="289.4" x2="227.8" y2="339.6"/><line data-a="n35" data-b="n6" x1="287.3" y1="289.4" x2="368.7" y2="157.7"/><line data-a="n35" data-b="n36" x1="287.3" y1="289.4" x2="268.8" y2="364.8"/><line data-a="n35" data-b="n7" x1="287.3" y1="289.4" x2="221.2" y2="269.8"/><line data-a="n37" data-b="n6" x1="398.8" y1="83.0" x2="368.7" y2="157.7"/><line data-a="n38" data-b="n23" x1="176.5" y1="118.2" x2="299.6" y2="100.7"/><line data-a="n38" data-b="n25" x1="176.5" y1="118.2" x2="263.0" y2="90.7"/><line data-a="n38" data-b="n21" x1="176.5" y1="118.2" x2="135.8" y2="201.7"/><line data-a="n39" data-b="n11" x1="148.6" y1="52.8" x2="207.9" y2="108.3"/><line data-a="n40" data-b="n22" x1="502.0" y1="210.3" x2="486.1" y2="183.9"/><line data-a="n40" data-b="n6" x1="502.0" y1="210.3" x2="368.7" y2="157.7"/><line data-a="n0" data-b="n2" x1="182.4" y1="284.9" x2="143.2" y2="300.5"/><line data-a="n41" data-b="n11" x1="252.2" y1="122.3" x2="207.9" y2="108.3"/><line data-a="n41" data-b="n9" x1="252.2" y1="122.3" x2="157.5" y2="130.3"/><line data-a="n42" data-b="n8" x1="541.1" y1="191.8" x2="480.9" y2="153.0"/><line data-a="n11" data-b="n43" x1="207.9" y1="108.3" x2="348.5" y2="111.6"/><line data-a="n41" data-b="n6" x1="252.2" y1="122.3" x2="368.7" y2="157.7"/><line data-a="n40" data-b="n8" x1="502.0" y1="210.3" x2="480.9" y2="153.0"/><line data-a="n21" data-b="n17" x1="135.8" y1="201.7" x2="127.7" y2="279.3"/><line data-a="n40" data-b="n30" x1="502.0" y1="210.3" x2="410.7" y2="142.4"/><line data-a="n44" data-b="n26" x1="379.2" y1="344.4" x2="329.3" y2="258.2"/><line data-a="n14" data-b="n45" x1="462.1" y1="72.9" x2="468.1" y2="134.1"/><line data-a="n8" data-b="n45" x1="480.9" y1="153.0" x2="468.1" y2="134.1"/><line data-a="n46" data-b="n45" x1="450.2" y1="262.0" x2="468.1" y2="134.1"/><line data-a="n5" data-b="n45" x1="514.3" y1="164.2" x2="468.1" y2="134.1"/><line data-a="n43" data-b="n45" x1="348.5" y1="111.6" x2="468.1" y2="134.1"/><line data-a="n4" data-b="n45" x1="529.5" y1="114.9" x2="468.1" y2="134.1"/><line data-a="n30" data-b="n45" x1="410.7" y1="142.4" x2="468.1" y2="134.1"/><line data-a="n47" data-b="n48" x1="101.4" y1="198.6" x2="95.8" y2="236.5"/><line data-a="n49" data-b="n48" x1="61.5" y1="229.4" x2="95.8" y2="236.5"/><line data-a="n7" data-b="n48" x1="221.2" y1="269.8" x2="95.8" y2="236.5"/><line data-a="n48" data-b="n50" x1="95.8" y1="236.5" x2="67.1" y2="195.3"/><line data-a="n51" data-b="n26" x1="257.7" y1="326.3" x2="329.3" y2="258.2"/><line data-a="n51" data-b="n1" x1="257.7" y1="326.3" x2="214.9" y2="303.9"/><line data-a="n51" data-b="n0" x1="257.7" y1="326.3" x2="182.4" y2="284.9"/><line data-a="n51" data-b="n2" x1="257.7" y1="326.3" x2="143.2" y2="300.5"/><line data-a="n51" data-b="n52" x1="257.7" y1="326.3" x2="416.2" y2="357.6"/><line data-a="n51" data-b="n7" x1="257.7" y1="326.3" x2="221.2" y2="269.8"/><line data-a="n51" data-b="n36" x1="257.7" y1="326.3" x2="268.8" y2="364.8"/><line data-a="n53" data-b="n54" x1="335.1" y1="275.3" x2="354.1" y2="188.5"/><line data-a="n53" data-b="n55" x1="335.1" y1="275.3" x2="294.3" y2="322.5"/><line data-a="n54" data-b="n43" x1="354.1" y1="188.5" x2="348.5" y2="111.6"/><line data-a="n56" data-b="n43" x1="312.5" y1="59.1" x2="348.5" y2="111.6"/><line data-a="n56" data-b="n41" x1="312.5" y1="59.1" x2="252.2" y2="122.3"/><line data-a="n57" data-b="n53" x1="386.5" y1="307.2" x2="335.1" y2="275.3"/><line data-a="n57" data-b="n26" x1="386.5" y1="307.2" x2="329.3" y2="258.2"/><line data-a="n58" data-b="n48" x1="170.0" y1="265.6" x2="95.8" y2="236.5"/><line data-a="n58" data-b="n26" x1="170.0" y1="265.6" x2="329.3" y2="258.2"/><line data-a="n58" data-b="n0" x1="170.0" y1="265.6" x2="182.4" y2="284.9"/><line data-a="n59" data-b="n41" x1="232.9" y1="160.9" x2="252.2" y2="122.3"/><line data-a="n59" data-b="n11" x1="232.9" y1="160.9" x2="207.9" y2="108.3"/><line data-a="n59" data-b="n26" x1="232.9" y1="160.9" x2="329.3" y2="258.2"/><line data-a="n60" data-b="n37" x1="374.2" y1="64.4" x2="398.8" y2="83.0"/><line data-a="n60" data-b="n56" x1="374.2" y1="64.4" x2="312.5" y2="59.1"/><line data-a="n61" data-b="n11" x1="305.9" y1="167.8" x2="207.9" y2="108.3"/><line data-a="n61" data-b="n62" x1="305.9" y1="167.8" x2="428.8" y2="173.1"/><line data-a="n6" data-b="n53" x1="368.7" y1="157.7" x2="335.1" y2="275.3"/><line data-a="n6" data-b="n63" x1="368.7" y1="157.7" x2="422.9" y2="217.6"/><line data-a="n6" data-b="n60" x1="368.7" y1="157.7" x2="374.2" y2="64.4"/><line data-a="n64" data-b="n65" x1="362.9" y1="250.1" x2="342.1" y2="297.3"/><line data-a="n64" data-b="n54" x1="362.9" y1="250.1" x2="354.1" y2="188.5"/><line data-a="n64" data-b="n53" x1="362.9" y1="250.1" x2="335.1" y2="275.3"/><line data-a="n64" data-b="n1" x1="362.9" y1="250.1" x2="214.9" y2="303.9"/><line data-a="n64" data-b="n66" x1="362.9" y1="250.1" x2="508.0" y2="243.1"/><line data-a="n4" data-b="n67" x1="529.5" y1="114.9" x2="550.1" y2="148.2"/><line data-a="n5" data-b="n68" x1="514.3" y1="164.2" x2="456.7" y2="223.5"/><line data-a="n5" data-b="n66" x1="514.3" y1="164.2" x2="508.0" y2="243.1"/><line data-a="n46" data-b="n65" x1="450.2" y1="262.0" x2="342.1" y2="297.3"/><line data-a="n69" data-b="n70" x1="441.4" y1="329.8" x2="494.8" y2="318.0"/><line data-a="n69" data-b="n52" x1="441.4" y1="329.8" x2="416.2" y2="357.6"/><line data-a="n69" data-b="n26" x1="441.4" y1="329.8" x2="329.3" y2="258.2"/><line data-a="n68" data-b="n26" x1="456.7" y1="223.5" x2="329.3" y2="258.2"/><line data-a="n68" data-b="n8" x1="456.7" y1="223.5" x2="480.9" y2="153.0"/><line data-a="n70" data-b="n52" x1="494.8" y1="318.0" x2="416.2" y2="357.6"/><line data-a="n70" data-b="n40" x1="494.8" y1="318.0" x2="502.0" y2="210.3"/><line data-a="n0" data-b="n65" x1="182.4" y1="284.9" x2="342.1" y2="297.3"/><line data-a="n26" data-b="n63" x1="329.3" y1="258.2" x2="422.9" y2="217.6"/><line data-a="n26" data-b="n55" x1="329.3" y1="258.2" x2="294.3" y2="322.5"/><line data-a="n40" data-b="n67" x1="502.0" y1="210.3" x2="550.1" y2="148.2"/><line data-a="n63" data-b="n8" x1="422.9" y1="217.6" x2="480.9" y2="153.0"/><line data-a="n66" data-b="n42" x1="508.0" y1="243.1" x2="541.1" y2="191.8"/><line data-a="n42" data-b="n67" x1="541.1" y1="191.8" x2="550.1" y2="148.2"/><line data-a="n1" data-b="n55" x1="214.9" y1="303.9" x2="294.3" y2="322.5"/><line data-a="n16" data-b="n53" x1="227.8" y1="339.6" x2="335.1" y2="275.3"/><line data-a="n71" data-b="n6" x1="280.8" y1="176.7" x2="368.7" y2="157.7"/><line data-a="n72" data-b="n26" x1="196.2" y1="214.1" x2="329.3" y2="258.2"/><line data-a="n72" data-b="n61" x1="196.2" y1="214.1" x2="305.9" y2="167.8"/><line data-a="n72" data-b="n47" x1="196.2" y1="214.1" x2="101.4" y2="198.6"/><line data-a="n73" data-b="n53" x1="275.3" y1="239.8" x2="335.1" y2="275.3"/><line data-a="n73" data-b="n26" x1="275.3" y1="239.8" x2="329.3" y2="258.2"/><line data-a="n73" data-b="n71" x1="275.3" y1="239.8" x2="280.8" y2="176.7"/><line data-a="n62" data-b="n5" x1="428.8" y1="173.1" x2="514.3" y2="164.2"/><line data-a="n64" data-b="n26" x1="362.9" y1="250.1" x2="329.3" y2="258.2"/><line data-a="n64" data-b="n62" x1="362.9" y1="250.1" x2="428.8" y2="173.1"/><line data-a="n64" data-b="n57" x1="362.9" y1="250.1" x2="386.5" y2="307.2"/><line data-a="n64" data-b="n61" x1="362.9" y1="250.1" x2="305.9" y2="167.8"/><line data-a="n64" data-b="n6" x1="362.9" y1="250.1" x2="368.7" y2="157.7"/><line data-a="n74" data-b="n26" x1="404.5" y1="254.1" x2="329.3" y2="258.2"/><line data-a="n74" data-b="n6" x1="404.5" y1="254.1" x2="368.7" y2="157.7"/><line data-a="n74" data-b="n64" x1="404.5" y1="254.1" x2="362.9" y2="250.1"/><line data-a="n71" data-b="n11" x1="280.8" y1="176.7" x2="207.9" y2="108.3"/><line data-a="n71" data-b="n26" x1="280.8" y1="176.7" x2="329.3" y2="258.2"/><line data-a="n75" data-b="n76" x1="436.2" y1="87.2" x2="393.2" y2="35.6"/><line data-a="n75" data-b="n6" x1="436.2" y1="87.2" x2="368.7" y2="157.7"/><line data-a="n76" data-b="n60" x1="393.2" y1="35.6" x2="374.2" y2="64.4"/><line data-a="n77" data-b="n51" x1="324.0" y1="352.2" x2="257.7" y2="326.3"/><line data-a="n76" data-b="n31" x1="393.2" y1="35.6" x2="318.4" y2="24.0"/><line data-a="n78" data-b="n40" x1="558.1" y1="246.8" x2="502.0" y2="210.3"/><line data-a="n75" data-b="n8" x1="436.2" y1="87.2" x2="480.9" y2="153.0"/><line data-a="n77" data-b="n26" x1="324.0" y1="352.2" x2="329.3" y2="258.2"/></g><g class="n"><circle data-n="n0" cx="182.4" cy="284.9" r="6.6" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n1" cx="214.9" cy="303.9" r="5.7" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n10" cx="163.7" cy="180.4" r="5.2" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n11" cx="207.9" cy="108.3" r="7.5" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n12" cx="121.9" cy="96.3" r="3.9" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n13" cx="240.7" cy="138.6" r="4.3" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n14" cx="462.1" cy="72.9" r="4.8" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n15" cx="522.2" cy="45.5" r="3.5" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n16" cx="227.8" cy="339.6" r="4.8" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n17" cx="127.7" cy="279.3" r="3.9" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n18" cx="111.5" cy="68.2" r="3.5" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n19" cx="246.6" cy="42.2" r="4.3" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n2" cx="143.2" cy="300.5" r="5.2" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n20" cx="202.1" cy="78.7" r="4.8" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n21" cx="135.8" cy="201.7" r="4.8" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n22" cx="486.1" cy="183.9" r="3.9" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n23" cx="299.6" cy="100.7" r="5.7" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n24" cx="473.4" cy="104.3" r="3.5" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n25" cx="263.0" cy="90.7" r="4.3" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n26" cx="329.3" cy="258.2" r="8.4" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n27" cx="188.9" cy="376.0" r="3.5" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n28" cx="77.2" cy="313.8" r="4.3" class="named" data-name="CEO" aria-label="CEO" tabindex="0" role="button"/><circle data-n="n29" cx="49.5" cy="334.7" r="3.5" class="named" data-name="CPO" aria-label="CPO" tabindex="0" role="button"/><circle data-n="n3" cx="116.9" cy="347.8" r="3.5" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n30" cx="410.7" cy="142.4" r="4.3" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n31" cx="318.4" cy="24.0" r="3.9" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n32" cx="592.5" cy="233.0" r="3.5" class="named" data-name="Developer" aria-label="Developer" tabindex="0" role="button"/><circle data-n="n33" cx="598.6" cy="205.1" r="3.5" class="named" data-name="Developer" aria-label="Developer" tabindex="0" role="button"/><circle data-n="n34" cx="41.4" cy="292.9" r="3.5" class="named" data-name="Head of Content" aria-label="Head of Content" tabindex="0" role="button"/><circle data-n="n35" cx="287.3" cy="289.4" r="4.8" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n36" cx="268.8" cy="364.8" r="3.9" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n37" cx="398.8" cy="83.0" r="3.9" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n38" cx="176.5" cy="118.2" r="4.3" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n39" cx="148.6" cy="52.8" r="3.5" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n4" cx="529.5" cy="114.9" r="4.8" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n40" cx="502.0" cy="210.3" r="6.2" class="named" data-name="Manager" aria-label="Manager" tabindex="0" role="button"/><circle data-n="n41" cx="252.2" cy="122.3" r="5.2" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n42" cx="541.1" cy="191.8" r="4.3" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n43" cx="348.5" cy="111.6" r="4.8" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n44" cx="379.2" cy="344.4" r="3.5" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n45" cx="468.1" cy="134.1" r="6.2" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n46" cx="450.2" cy="262.0" r="3.9" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n47" cx="101.4" cy="198.6" r="3.9" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n48" cx="95.8" cy="236.5" r="5.2" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n49" cx="61.5" cy="229.4" r="3.5" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n5" cx="514.3" cy="164.2" r="5.2" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n50" cx="67.1" cy="195.3" r="3.5" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n51" cx="257.7" cy="326.3" r="6.6" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n52" cx="416.2" cy="357.6" r="4.3" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n53" cx="335.1" cy="275.3" r="6.2" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n54" cx="354.1" cy="188.5" r="4.3" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n55" cx="294.3" cy="322.5" r="4.3" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n56" cx="312.5" cy="59.1" r="4.3" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n57" cx="386.5" cy="307.2" r="4.3" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n58" cx="170.0" cy="265.6" r="4.3" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n59" cx="232.9" cy="160.9" r="4.3" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n6" cx="368.7" cy="157.7" r="8.4" class="named" data-name="Compliance" aria-label="Compliance" tabindex="0" role="button"/><circle data-n="n60" cx="374.2" cy="64.4" r="4.8" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n61" cx="305.9" cy="167.8" r="4.8" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n62" cx="428.8" cy="173.1" r="4.3" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n63" cx="422.9" cy="217.6" r="4.3" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n64" cx="362.9" cy="250.1" r="8.0" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n65" cx="342.1" cy="297.3" r="4.3" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n66" cx="508.0" cy="243.1" r="4.3" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n67" cx="550.1" cy="148.2" r="4.3" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n68" cx="456.7" cy="223.5" r="4.3" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n69" cx="441.4" cy="329.8" r="4.3" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n7" cx="221.2" cy="269.8" r="5.2" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n70" cx="494.8" cy="318.0" r="4.3" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n71" cx="280.8" cy="176.7" r="4.8" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n72" cx="196.2" cy="214.1" r="4.3" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n73" cx="275.3" cy="239.8" r="4.3" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n74" cx="404.5" cy="254.1" r="4.3" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n75" cx="436.2" cy="87.2" r="4.3" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n76" cx="393.2" cy="35.6" r="4.3" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n77" cx="324.0" cy="352.2" r="3.9" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n78" cx="558.1" cy="246.8" r="3.5" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n8" cx="480.9" cy="153.0" r="6.2" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/><circle data-n="n9" cx="157.5" cy="130.3" r="5.7" class="named" data-name="Agent" aria-label="Agent" tabindex="0" role="button"/></g></svg><p class="fleetmap-bubble" role="status" hidden></p><figcaption>Magnitude runs: 5 humans · 74 agents · 149 synapses</figcaption></figure>
+<footer class="foot"><span class="made"><svg viewBox="0 0 77 44" fill="currentColor" aria-hidden="true"><path d="M0 44L25.4033 0L38.1051 22L25.4033 44Z"/><path d="M38.1051 22L50.8066 0L76.2101 44L50.8069 44Z"/></svg><span>© 2026 · Made by <a href="https://inc.magnitude.money">Magnitude</a> · <span class="lic-inline">Apache 2 license · Spec CC BY 4.0 <button type="button" class="info" aria-expanded="false" aria-controls="lic-foot" aria-label="About the Apache 2 license" data-stay><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></button></span></span></span><div class="def lic-def" id="lic-foot" hidden><p>Use it, change it and share it, commercially too. In return:</p><ul><li>Keep the copyright notice and a copy of the license.</li><li>Credit the authors: keep the attributions in the NOTICE file.</li><li>Mark the files you change.</li><li>Don&rsquo;t use Magnitude&rsquo;s names or marks to promote your work.</li><li>Each contributor licenses you any patent of theirs the code needs; that ends if you sue claiming the code infringes a patent.</li><li>It comes as is, with no warranty.</li></ul><a href="https://www.apache.org/licenses/LICENSE-2.0">Read the license</a></div><span class="works"><span>Works with <a href="https://fleetfactory.ai">FleetFactory.ai</a></span><button type="button" class="lsw" id="map-sw" role="switch" aria-checked="false" aria-controls="fleet-map" aria-label="Show Fleet Factory's map"><span></span></button></span></footer>
+<p class="tm">Claude, Codex, ChatGPT, Gemini and Cursor are trademarks of their respective owners.</p>
+<script>
+(function(){
+var HG=['M13.1 45L25.8 23L51.2 23L63.9 45Z','M25.8 21L13.1 -1L63.9 -1L51.2 21Z'];
+var HGC=['M25.8 44L38.5 22L38.5 22L51.2 44Z','M38.5 22L25.8 0L51.2 0L38.5 22Z'];
+var reduced=function(){return matchMedia('(prefers-reduced-motion: reduce)').matches};
+function setHg(m,closed){var p=closed?HGC:HG;m.querySelector('.mk-left').setAttribute('d',p[0]);m.querySelector('.mk-right').setAttribute('d',p[1]);m.toggleAttribute('data-hg-pair',closed)}
+function on(m){var k=m.dataset.kind;
+ if(k==='M')return (+m.dataset.turns||0)%2===1;
+ if(k==='hourglass')return m.hasAttribute('data-hg-pair');
+ if(k==='hexagon')return m.hasAttribute('data-currency');
+ return m.hasAttribute('data-double-r')}
+function tap(m){var k=m.dataset.kind;
+ if(k==='M'){var t=(+m.dataset.turns||0)+1;m.dataset.turns=t;m.style.setProperty('--turn',t*180+'deg');m.toggleAttribute('data-hourglass',t%2===1);return}
+ if(k==='hexagon'){m.toggleAttribute('data-currency');return}
+ if(k==='r'||k==='F'){m.toggleAttribute('data-double-r');return}
+ if(k==='hourglass'){var closed=m.hasAttribute('data-hg-pair');
+  if(!closed||reduced())return setHg(m,!closed);
+  m.dataset.hgPhase='swap';
+  requestAnimationFrame(function(){requestAnimationFrame(function(){m.dataset.hgPhase='return';setHg(m,false);clearTimeout(m._p);m._p=setTimeout(function(){delete m.dataset.hgPhase},500)})})}}
+function play(m){tap(m);clearTimeout(m._b);m._b=setTimeout(function(){if(on(m))tap(m)},2000)}
+document.querySelectorAll('.mark').forEach(function(b){b.addEventListener('click',function(){play(b.querySelector('.mk'))})});
+document.querySelectorAll('.bm').forEach(function(b){if(!/Mac|iPhone|iPad/.test(navigator.platform||navigator.userAgent))b.dataset.tip='Press Ctrl+D to bookmark'});
+document.querySelectorAll('.top .mk').forEach(function(m){m.addEventListener('click',function(e){e.preventDefault();play(m)})});
+})();
+</script>
+<script>
+(function(){
+var open=null,timer;
+function set(b,on){var t=document.getElementById(b.getAttribute('aria-controls')),c=b.closest('.c'),row=c&&c.parentNode;
+ if(c&&on&&c.classList.contains('info-on'))return;
+ /* A price card: only the open card grows, by its threshold's height; the others
+    hold their height, so no (i) moves under the pointer (Erik, 2026-11-07). */
+ var h=c&&c.offsetHeight,y=b.getBoundingClientRect().top;
+ if(c&&on){row.querySelectorAll('.c').forEach(function(x){if(x!==c)x.style.height=x.offsetHeight+'px'});row.classList.add('one-open');c.style.minHeight=h+'px'}
+ b.setAttribute('aria-expanded',on);t.hidden=!on;
+ if(!c)return;
+ c.classList.toggle('info-on',on);
+ if(!on){c.style.minHeight='';row.classList.remove('one-open');row.querySelectorAll('.c').forEach(function(x){x.style.height=''});return}
+ c.style.minHeight=(h+t.offsetHeight+4)+'px';var dy=y-b.getBoundingClientRect().top;if(dy>0)c.style.minHeight=(c.offsetHeight+dy)+'px'}
+function close(){clearTimeout(timer);if(open){set(open,false);open=null}}
+function show(b){if(open===b){clearTimeout(timer);if(!b.hasAttribute('data-stay'))timer=setTimeout(close,+b.dataset.ms||8000);return}
+ close();open=b;set(b,true);clearTimeout(timer);if(!b.hasAttribute('data-stay'))timer=setTimeout(close,+b.dataset.ms||8000)}
+document.querySelectorAll('.info').forEach(function(b){
+ b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();open===b?close():show(b)});
+ b.addEventListener('pointerenter',function(e){if(e.pointerType==='mouse')show(b)});
+});
+})();
+</script>
+
+<script>
+(function(){var b=document.getElementById("ls"),path=document.getElementById("ls-path"),root=document.documentElement,
+ ON="M70.5581 15.3768L70.5581 88.7878C70.5581 98.8753 65.3456 104.126 55.335 104.126L15.2231 104.126C5.18249 104.126 0 98.8753 0 88.7878L0 15.3768C0 5.25092 5.18249 0 15.2231 0L55.335 0C65.3456 0 70.5581 5.25092 70.5581 15.3768ZM17.505 13.8281C14.6343 13.8281 13.4699 14.9625 13.4699 17.8415L13.4699 41.5462C13.4699 44.4168 14.6343 45.5512 17.505 45.5512L52.8609 45.5512C55.77 45.5512 56.9344 44.4168 56.9344 41.5462L56.9344 17.8415C56.9344 14.9625 55.77 13.8281 52.8609 13.8281Z",OFF="M70.5581 15.3768L70.5581 88.7878C70.5581 98.9137 65.3456 104.126 55.335 104.126L15.2231 104.126C5.18249 104.126 0 98.9137 0 88.7878L0 15.3768C0 5.28936 5.18249 0 15.2231 0L55.335 0C65.3456 0 70.5581 5.28936 70.5581 15.3768ZM17.505 58.6135C14.6343 58.6135 13.4699 59.7478 13.4699 62.6185L13.4699 86.3316C13.4699 89.2022 14.6343 90.3366 17.505 90.3366L52.8609 90.3366C55.77 90.3366 56.9344 89.2022 56.9344 86.3316L56.9344 62.6185C56.9344 59.7478 55.77 58.6135 52.8609 58.6135Z";
+ function dark(){var t=root.dataset.theme;return t?t==="dark":matchMedia("(prefers-color-scheme: dark)").matches}
+ function paint(){var d=dark();path.setAttribute("d",d?OFF:ON);b.setAttribute("aria-pressed",String(d))}
+ b.addEventListener("click",function(){var t=dark()?"light":"dark";root.dataset.theme=t;try{localStorage.setItem("splash:theme",t)}catch(e){}paint()});
+ matchMedia("(prefers-color-scheme: dark)").addEventListener("change",paint);paint()})();
+</script>
+<script>
+(function(){var b=document.getElementById('map-sw'),m=document.getElementById('fleet-map');if(!b||!m)return;
+/* One bubble at a time, above the chosen dot and over every other (Erik,
+   2026-11-08, as on inc): a named dot's click shows it, a second click or a
+   click anywhere else puts it away. */
+/* Any dot isolates itself and its links, as inc's "Click a node to isolate
+   it" (Erik, 2026-11-08: "only the Compliance dot works"); a named one also
+   shows its bubble. */
+var bub=m.querySelector('.fleetmap-bubble'),svg=m.querySelector('svg'),cur=null;
+function clear(){svg.classList.remove('iso');m.querySelectorAll('.near,.on').forEach(function(x){x.classList.remove('near','on')})}
+function hide(){bub.hidden=true;clear();cur=null}
+function show(c){var f=m.getBoundingClientRect(),r=c.getBoundingClientRect(),n=c.dataset.n;
+ clear();cur=c;c.classList.add('on');svg.classList.add('iso');
+ m.querySelectorAll('.e line').forEach(function(l){if(l.dataset.a===n||l.dataset.b===n){l.classList.add('near');
+  var o=l.dataset.a===n?l.dataset.b:l.dataset.a,d=m.querySelector('.n circle[data-n="'+o+'"]');if(d)d.classList.add('near')}});
+ if(c.dataset.name){bub.textContent=c.dataset.name;bub.hidden=false;bub.style.left=(r.left+r.width/2-f.left)+'px';bub.style.top=(r.top-f.top)+'px'}else{bub.hidden=true}}
+m.querySelectorAll('.n circle').forEach(function(c){
+ function pick(ev){ev.stopPropagation();cur===c?hide():show(c)}
+ c.addEventListener('click',pick);
+ c.addEventListener('keydown',function(ev){if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();pick(ev)}});
+});
+m.addEventListener('click',hide);
+/* Drag the bubble to move its dot and the dot's lines; the rest stays put. */
+var grip=null;
+function local(ev){var p=svg.createSVGPoint();p.x=ev.clientX;p.y=ev.clientY;return p.matrixTransform(svg.getScreenCTM().inverse())}
+bub.addEventListener('click',function(ev){ev.stopPropagation()});
+bub.addEventListener('pointerdown',function(ev){if(!cur)return;ev.stopPropagation();var p=local(ev);
+ grip={dx:+cur.getAttribute('cx')-p.x,dy:+cur.getAttribute('cy')-p.y};bub.setPointerCapture(ev.pointerId)});
+bub.addEventListener('pointermove',function(ev){if(!grip||!cur)return;var p=local(ev),x=p.x+grip.dx,y=p.y+grip.dy,n=cur.dataset.n;
+ cur.setAttribute('cx',x.toFixed(1));cur.setAttribute('cy',y.toFixed(1));
+ m.querySelectorAll('.e line').forEach(function(l){if(l.dataset.a===n){l.setAttribute('x1',x);l.setAttribute('y1',y)}if(l.dataset.b===n){l.setAttribute('x2',x);l.setAttribute('y2',y)}});
+ var f=m.getBoundingClientRect(),r=cur.getBoundingClientRect();bub.style.left=(r.left+r.width/2-f.left)+'px';bub.style.top=(r.top-f.top)+'px'});
+bub.addEventListener('pointerup',function(ev){grip=null;bub.releasePointerCapture(ev.pointerId)});
+b.addEventListener('click',function(){var on=b.getAttribute('aria-checked')!=='true';b.setAttribute('aria-checked',String(on));m.hidden=!on;
+if(on)m.scrollIntoView({block:'nearest',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})});})();
+</script>
+<script>
+document.querySelectorAll('.launch').forEach(function(p){
+var at=Date.parse(p.dataset.at),t=p.querySelector('.tminus');
+function pad(n){return String(n).padStart(2,'0')}
+function tick(){var s=Math.floor((at-Date.now())/1000);
+if(s<=0){p.remove();return}
+var d=Math.floor(s/86400);
+t.textContent='T-minus '+(d?d+'d ':'')+pad(Math.floor(s/3600)%24)+':'+pad(Math.floor(s/60)%60)+':'+pad(s%60);
+setTimeout(tick,1000)}
+tick();});
+</script>
+<script>
+document.querySelectorAll('.codetabs').forEach(function(bar){
+var tabs=[].slice.call(bar.querySelectorAll('[role=tab]'));
+tabs.forEach(function(t){t.addEventListener('click',function(){tabs.forEach(function(x){
+var on=x===t;x.setAttribute('aria-selected',on);document.getElementById(x.getAttribute('aria-controls')).hidden=!on})})});
+});
+</script>
+<script>
+document.querySelectorAll('.code button').forEach(function(b){b.addEventListener('click',function(){
+var t=b.closest('div').nextElementSibling.textContent;
+(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1500)},function(){});
+})});
+</script>
+<script>
+document.querySelectorAll('.codebtn').forEach(function(b){b.addEventListener('click',function(){
+ var on=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',on);
+ document.getElementById(b.getAttribute('aria-controls')).hidden=!on})});
+document.querySelectorAll('form.capture').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();
+ var input=f.querySelector('input'),body=JSON.stringify({email:input.value.trim(),source:f.dataset.source,isManualSubmit:true,skipEmailTrigger:true});
+ /* A plain cross-site post (text/plain, no-cors): the endpoint reads JSON from any body, and no preflight is needed. */
+ fetch('https://www.magnitude.money/api/waitlist/submit',{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:body}).catch(function(){});
+ f.hidden=true;var done=f.parentNode.querySelector('.capture-done');if(done)done.hidden=false})});
+document.querySelectorAll('[data-tier]').forEach(function(b){b.addEventListener('click',function(){
+ var d=document.getElementById(b.dataset.agent),f=d.querySelector('form');
+ d.querySelector('.eyebrow').textContent=b.dataset.tierName;
+ d.querySelector('h2').textContent=b.dataset.cta.split(' ').map(function(w){return w.charAt(0).toUpperCase()+w.slice(1)}).join(' ');
+ /* A business tier asks for a work email; Idea, an email (Erik, 2026-11-07). */
+ var w='work' in b.dataset?'work email':'email';d.querySelector('.ask').textContent='Enter your '+w+' and we’ll be in touch.';
+ f.querySelector('input').placeholder='Enter your '+w;
+ f.dataset.source=d.dataset.sourcePrefix+'-'+b.dataset.tier;f.hidden=false;f.reset();d.querySelector('.capture-done').hidden=true})});
+document.querySelectorAll('[data-agent]').forEach(function(b){var d=document.getElementById(b.dataset.agent);
+ b.addEventListener('click',function(){d.showModal()});
+ d.querySelector('.agent-close').addEventListener('click',function(){d.close()});
+ d.addEventListener('click',function(e){if(e.target===d)d.close()})});
+</script>
+
+<script>
+(function(){
+/* Spec reader and feedback: feedback opens a prefilled GitHub
+   issue, so no server is needed here. REPO and COUNTS_URL are placeholders
+   until release. */
+var REPO='MagnitudeMoney/brainbridge',COUNTS_URL='';
+var rd=document.getElementById('reader'),doc=document.getElementById('readerDoc'),fbk=document.getElementById('fbk'),
+ sec=document.getElementById('fbkSec'),txt=document.getElementById('fbkText'),go=document.getElementById('fbkGo');
+function url(){var w=sec.value,t=txt.value.trim(),title=(w==='The whole spec'?'Spec':w)+': '+(t.split('\n')[0].slice(0,60)||'feedback');
+ return 'https://github.com/'+REPO+'/issues/new?title='+encodeURIComponent(title)+'&body='+encodeURIComponent('Section: '+w+'\n\n'+t+'\n\n— from the spec reader on brainbridge.sh')}
+function sync(){var ok=!!(REPO&&txt.value.trim());go.setAttribute('aria-disabled',String(!ok));go.href=ok?url():'#'}
+function feedback(where){sec.value=where||'The whole spec';sync();fbk.showModal();txt.focus()}
+doc.querySelectorAll('h3').forEach(function(h){var n=h.textContent.trim();sec.add(new Option(n));
+ var b=document.createElement('button');b.type='button';b.className='cmt';b.textContent='Comment';b.setAttribute('aria-label','Comment on '+n);
+ b.addEventListener('click',function(){feedback(n)});h.append(b)});
+document.querySelectorAll('[data-open="reader"]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();rd.showModal()})});
+document.querySelectorAll('[data-fbk]').forEach(function(b){b.addEventListener('click',function(){feedback()})});
+[rd,fbk].forEach(function(d){d.querySelector('.agent-close').addEventListener('click',function(){d.close()});
+ d.addEventListener('click',function(e){if(e.target===d)d.close()})});
+txt.addEventListener('input',sync);sec.addEventListener('change',sync);
+go.addEventListener('click',function(){setTimeout(function(){fbk.close();txt.value='';sync()},0)});
+if(COUNTS_URL)fetch(COUNTS_URL).then(function(r){return r.json()}).then(function(c){
+ document.querySelectorAll('#counts-grid [data-k]').forEach(function(b){var v=b.dataset.k.split('.').reduce(function(o,k){return o&&o[k]},c);
+  if(typeof v==='number')b.textContent=v.toLocaleString('en-US')})}).catch(function(){});
+})();
+</script>
+</body></html>
