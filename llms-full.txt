@@ -262,7 +262,7 @@ Spec text: CC BY 4.0. Code: Apache 2.0. No patent, no trademark.
 
 ## Changelog
 
-Every change, newest first. Full history: https://github.com/MagnitudeMoney/brainbridge/commits/main
+What changed, newest first. Every commit: https://github.com/MagnitudeMoney/brainbridge/commits/main
 
 - Nov 12, 2026: `recall` ranks partial matches: entries holding every word come first, then the best partial ones, each marked with how many words it matched. One search now finds the evidence for 78.1% of LongMemEval questions, up from 18.7%. `--strict` keeps the old behaviour. A name’s random id no longer matches a search. (https://github.com/MagnitudeMoney/brainbridge/commit/ba7beec)
 - Nov 12, 2026: LongMemEval benchmark: the code and every number, published so anyone can rerun it. (https://github.com/MagnitudeMoney/brainbridge/commit/80e55cc)
