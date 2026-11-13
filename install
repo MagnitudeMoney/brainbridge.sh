@@ -22,8 +22,8 @@
 main() {
     set -eu
     repo="https://github.com/MagnitudeMoney/brainbridge.git"
-    tag="v0.1.1"
-    commit="955c6c6bffb4fec76d46a1219ad9e79947f1bd08"
+    tag="v0.1.2"
+    commit="d6849dfc97fa1b02167d65dd14be96546b7b2bb2"
     dir="${BRAINBRIDGE_CODE:-$HOME/.brainbridge/code}"
 
     say() { printf '%s\n' "$*"; }
