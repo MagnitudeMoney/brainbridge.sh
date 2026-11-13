@@ -428,7 +428,7 @@ The owner mints their own identity and keeps it locked; the same identity proves
 Versions follow MAJOR.MINOR. While the major version is 0, a minor release may change the format; every change is listed here with its date.
 
 - v0.1 · 2026-11-11: first public spec, released with brainbridge.sh. Brains and entries, kinds and terms, grants, MindMeld, PadLock signing, TransporterBeam, PrimeDirective and TallyTelemetry.
-- v0.1 · 2026-11-11, later the same day: TricorderTelemetry renamed TallyTelemetry; behaviour unchanged.
+- v0.1 · 2026-11-11, later the same day: Telemetry named TallyTelemetry; behaviour unchanged.
 - v0.1 · 2026-11-11, evening: the report after opt-in, brainbridge report and brain_report, read from the local log. No new events; nothing new sent.
 - Planned, v0.2: encryption of private and --between entries.
 
@@ -574,7 +574,7 @@ First public spec, released with brainbridge.sh.
 
 ### v0.1 · 2026-11-11, later the same day
 
-- TricorderTelemetry renamed TallyTelemetry. The behaviour is unchanged.
+- Telemetry named TallyTelemetry. The behaviour is unchanged.
 
 ### Planned: v0.2
 

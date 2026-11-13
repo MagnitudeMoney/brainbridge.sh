@@ -87,7 +87,7 @@ th,td{text-align:left;vertical-align:top;padding:8px 12px 8px 0;border-bottom:1p
 <p>First public spec, released with brainbridge.sh.</p>
 <ul><li>Store: one JSON Lines file per brain, plus <code>_grants</code>, <code>_keys</code> and <code>_mindmeld</code>; append-only.</li><li>Entries: six kinds, short and long terms, <code>name</code> replacement, amend and retire records.</li><li>Grants: read and append scopes, limits by kind, words or id, expiry, revokes.</li><li>MindMeld: consented, two-sided copies that keep their source.</li><li>PadLock: Ed25519 signing via <code>ssh-keygen</code>, canonical form, <code>brainbridge verify</code>.</li><li>TransporterBeam: export to JSONL (lossless), AGENTS.md, GEMINI.md, CLAUDE.md and ChatGPT; import from JSONL.</li><li>PrimeDirective: the eight rules.</li><li>TallyTelemetry: opt-in, events only, no hosted collector.</li></ul>
 <h3>v0.1 · 2026-11-11, later the same day</h3>
-<ul><li>TricorderTelemetry renamed TallyTelemetry. The behaviour is unchanged.</li></ul>
+<ul><li>Telemetry named TallyTelemetry. The behaviour is unchanged.</li></ul>
 <h3>Planned: v0.2</h3>
 <ul><li>Encryption of private and <code>between</code> entries (age: X25519 + ChaCha20-Poly1305).</li></ul>
 </main></body></html>
