@@ -147,7 +147,7 @@ Because it’s plain files in git, any model from any company can read it, and s
 
 ## How well it remembers
 
-Run: Nov 12, 2026, 5:01 pm PST (recall ranks partial matches). The baseline run, Nov 12, 2026, 4:34 pm PST, stays listed on the page and in the results.
+Run: Nov 12, 2026, 5:41 pm PST (the agent saves preferences in searchable words). Earlier runs (5:01 pm, recall ranks partial matches; 4:34 pm, the baseline) stay listed on the page and in the results.
 
 We measure BrainBridge on LongMemEval, a public benchmark for long-term memory: 500 questions, each buried in about 490 turns of past conversation.
 
@@ -167,13 +167,13 @@ A single recall with the whole question now finds the evidence for 78.1% of ques
 
 38 of 50 questions answered correctly (76%), graded by Claude with LongMemEval’s own judge prompts. Counting across many past conversations scores lowest, at 38%.
 
-**It misses some preferences.**
+**It keeps preferences.**
 
-Recall finds 53% of them, because a request for a recommendation rarely uses the words someone used to say what they like. That’s next.
+When someone says what they like, the agent saves it in words a later search would use, and preferences load every session. Preference questions answered correctly: 29 of 30 (96.7%), up from 20 of 30.
 
 **Check our work.**
 
-The code and every number are public. Run it yourself: https://github.com/MagnitudeMoney/brainbridge/blob/ba7beec/docs/brainbridge-longmemeval-results.md
+The code and every number are public. Run it yourself: https://github.com/MagnitudeMoney/brainbridge/blob/32d079a/docs/brainbridge-longmemeval-results.md
 
 ## The entry format
 
@@ -264,6 +264,7 @@ Spec text: CC BY 4.0. Code: Apache 2.0. No patent, no trademark.
 
 What changed, newest first. Every commit: https://github.com/MagnitudeMoney/brainbridge/commits/main
 
+- Nov 12, 2026: Agents save preferences in the words a later search would use, and preferences load every session. On LongMemEval’s preference questions, correct answers went from 66.7% to 96.7%. (https://github.com/MagnitudeMoney/brainbridge/commit/32d079a)
 - Nov 12, 2026: `recall` ranks partial matches: entries holding every word come first, then the best partial ones, each marked with how many words it matched. One search now finds the evidence for 78.1% of LongMemEval questions, up from 18.7%. `--strict` keeps the old behaviour. A name’s random id no longer matches a search. (https://github.com/MagnitudeMoney/brainbridge/commit/ba7beec)
 - Nov 12, 2026: LongMemEval benchmark: the code and every number, published so anyone can rerun it. (https://github.com/MagnitudeMoney/brainbridge/commit/80e55cc)
 - Nov 11, 2026: `brainbridge report` and `brain_report`: what opting in gives back, read from your own log. Nothing new is sent. (https://github.com/MagnitudeMoney/brainbridge/commit/8335197)
