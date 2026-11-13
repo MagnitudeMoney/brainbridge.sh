@@ -96,6 +96,10 @@ h1{font-family:var(--display);font-weight:400;font-size:clamp(40px,8vw,64px);lin
 .pagetabs button[aria-selected="true"]{color:var(--fg);border-bottom-color:var(--fg)}
 .pagepanel>.sec:first-child{padding-top:24px}
 .pagepanel:focus{outline:none}
+.ideas{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.ideas li{display:flex;gap:16px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--rule)}
+.ideas .votes{font-family:var(--mono);font-size:13px;min-width:2.5em;color:var(--muted)}
+.ideasacts{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0}
 .codetabs{display:flex;align-items:center;gap:16px;border-bottom:1px solid var(--rule);margin:0 0 -4px}
 .codetabs [role=tablist]{display:flex;gap:24px}
 .codetabs button{all:unset;cursor:pointer;padding:12px 0 10px;font-size:15px;font-weight:500;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-1px;transition:color 150ms ease,border-color 150ms ease}
@@ -664,6 +668,19 @@ $ brainbridge connect codex --yes
 
 <div class="pagepanel" role="tabpanel" id="tab-roadmap" aria-labelledby="pt-roadmap" tabindex="-1" hidden>
 <section class="sec" id="roadmap" aria-labelledby="roadmap-t"><div class="bhead"><h2 id="roadmap-t">Roadmap</h2><span class="run">next: v0.2</span></div>
+<div class="codetabs"><div role="tablist" aria-label="Roadmap"><button type="button" role="tab" id="rm-t-shipped" aria-controls="rm-shipped" aria-selected="false">Shipped</button><button type="button" role="tab" id="rm-t-next" aria-controls="rm-next" aria-selected="true">Next</button><button type="button" role="tab" id="rm-t-ideas" aria-controls="rm-ideas" aria-selected="false">Ideas</button></div></div>
+<div role="tabpanel" id="rm-shipped" aria-labelledby="rm-t-shipped" hidden>
+<dl class="rules">
+<div><dt>v0.1.3 <span class="muted">&middot; Nov 13, 2026</span></dt><dd>Session start reads the index: wake on 300 signed entries went from 1.95 s to 3 ms, with identical output. Any change to the log now rebuilds the index. <a class="url" href="https://github.com/MagnitudeMoney/brainbridge/pull/11">#11</a></dd></div>
+<div><dt>v0.1.2 <span class="muted">&middot; Nov 12, 2026</span></dt><dd>A recall index beside the log, with the same answers as the scan: 88 ms instead of 1.3 s at 100,000 entries. <a class="url" href="https://github.com/MagnitudeMoney/brainbridge/pull/10">#10</a></dd></div>
+<div><dt>v0.1.1 <span class="muted">&middot; Nov 12, 2026</span></dt><dd>One-line install, and <code>brainbridge setup</code> from a fresh clone to a working brain. <a class="url" href="https://github.com/MagnitudeMoney/brainbridge/pull/7">#7</a></dd></div>
+<div><dt>v0.1 <span class="muted">&middot; Nov 12, 2026</span></dt><dd>Agents save preferences in searchable words: preference answers went from 20 to 29 of 30. <a class="url" href="https://github.com/MagnitudeMoney/brainbridge/pull/5">#5</a></dd></div>
+<div><dt>v0.1 <span class="muted">&middot; Nov 12, 2026</span></dt><dd>Recall ranks partial matches: one search finds the evidence for 78.1% of questions, up from 18.7%. <a class="url" href="https://github.com/MagnitudeMoney/brainbridge/pull/3">#3</a></dd></div>
+<div><dt>v0.1 <span class="muted">&middot; Nov 11, 2026</span></dt><dd>Released: the spec, the command line and the MCP server, under Apache 2.0.</dd></div>
+</dl>
+<p class="muted">Every release, with its evidence, is in the <a class="url" href="#changelog">Changelog</a>.</p>
+</div>
+<div role="tabpanel" id="rm-next" aria-labelledby="rm-t-next">
 <p class="lead">What&rsquo;s next, in the order it can land. The log stays the only truth throughout: everything built for speed is derived from it and rebuilds from it.</p>
 <dl class="rules">
 <div><dt>1 &middot; Encryption</dt><dd>v0.2. Private entries are locked with the owner&rsquo;s own key in the age format, so a private entry on disk shows no readable text. Today they&rsquo;re hidden by the tool&rsquo;s rules but stored as plain text. Signatures keep verifying.</dd></div>
@@ -674,7 +691,13 @@ $ brainbridge connect codex --yes
 <div><dt>6 &middot; Embeddings, optional</dt><dd>A second index for questions worded differently from the memory. Derived from the log, rebuildable, and off by default.</dd></div>
 <div><dt>7 &middot; Hosted at scale</dt><dd>A database for organizations running many brains. Every brain exports back to identical JSON lines, and BrainBridge never depends on it.</dd></div>
 </dl>
-<p class="muted">What&rsquo;s done, with the evidence for each release, is in the <a class="url" href="#changelog">Changelog</a> and the <a class="url" href="https://github.com/MagnitudeMoney/brainbridge/blob/main/docs/brainbridge-roadmap.md">full roadmap</a>.</p>
+<p class="muted">The <a class="url" href="https://github.com/MagnitudeMoney/brainbridge/blob/main/docs/brainbridge-roadmap.md">full roadmap</a> has the evidence for each step.</p>
+</div>
+<div role="tabpanel" id="rm-ideas" aria-labelledby="rm-t-ideas" hidden>
+<p class="lead">Ideas from anyone, most-wanted first. A thumbs-up on an idea is a vote.</p>
+<ol class="ideas" id="ideas-list"><li class="muted">Loading the ideas&hellip;</li></ol>
+<p class="ideasacts"><a class="act" href="https://github.com/MagnitudeMoney/brainbridge/issues/new?template=brainbridge-idea.yml">Suggest an idea</a><a class="act" href="https://github.com/MagnitudeMoney/brainbridge/issues?q=is%3Aissue+is%3Aopen+label%3Aidea+sort%3Areactions-%2B1-desc">See them all on GitHub</a></p>
+</div>
 </section>
 </div><div class="pagepanel" role="tabpanel" id="tab-questions" aria-labelledby="pt-questions" tabindex="-1">
 <section class="sec faq" id="faq" aria-labelledby="faq-t"><h2 id="faq-t">Questions</h2><div class="qs"><details><summary>What does it cost?</summary><p>Nothing. The format, the CLI, minting and signing are given away, and so is encryption when it ships in v0.2. Code: Apache 2.0. Spec text: CC BY 4.0. No patent, no trademark.</p><p>Fleet Factory is the first-party way an organization uses BrainBridge fully: hosted ReadyRooms and MindMelds, permissions, moderation, an admin over who may meld with whom, audit and retention, working on day one.</p></details><details><summary>Which agents can use it?</summary><p>Because it&rsquo;s plain files in git, any model from any company can read it, and so can anyone with access. Any MCP client can call its thirteen tools, and <code>brainbridge connect codex|gemini|cursor|claude</code> sets it up in that tool. Two clients sharing one brain is tested at the protocol; a live run inside Codex, Gemini CLI or Cursor is not proven yet.</p></details><details><summary>Does BrainBridge send what my agent remembers anywhere?</summary><p>No. A brain is personal data. The format goes out; the contents never do.</p><p>TallyTelemetry is off until a person turns it on, and an agent cannot turn it on by itself. It records events, never content, and keeps them on your machine: no public collector exists yet, so nothing is sent.</p></details><details><summary>Are private entries encrypted?</summary><p>Not yet. Today an entry marked private is shown only to its owner, but it is stored as plain text like everything else, so anyone who can read the repository can read it.</p><p>What PadLock does today is sign: every entry is signed with its owner&rsquo;s own key, and readers verify it, so you can prove who wrote it. Encryption ships in v0.2, locking private entries to their owner and &ldquo;between&rdquo; entries to each person named.</p></details><details><summary>Can one agent make another obey its memories?</summary><p>No. A memory is information, never an order. What another brain says is weighed, never obeyed.</p></details><details><summary>Can I see or correct what is remembered about me?</summary><p>Yes. Anyone can ask what&rsquo;s remembered about them, correct it, and have it retired. Retiring hides a memory but doesn&rsquo;t erase it, and we say so.</p></details><details><summary>Who made it?</summary><p>The team at Magnitude Inc. Erik Kjell set its two founding rules: every entry carries a source, and your own brain loads into every session. He also decided to give it away. It currently runs in Magnitude's FleetFactory: a compliance-first, human-led team of semi-autonomous agents who collaborate to build the business. Each of those agents keeps its own brain. They built BrainBridge too: one of them wrote it first, as its own memory, in September 2026, and another looks after it now.</p></details></div></section>
@@ -956,6 +979,23 @@ tabs.forEach(function(t,i){t.addEventListener('click',function(){show(t);history
   e.preventDefault();var n=tabs[(i+d+tabs.length)%tabs.length];n.focus();n.click()})});
 if(!fromHash())show(tabs[0]);
 window.addEventListener('hashchange',fromHash);
+})();
+</script>
+<script>
+/* ROADMAP IDEAS (Erik, 2026-11-13). GitHub issues labelled idea, most thumbs-up first, read from
+   GitHub's public API in the visitor's browser. If GitHub refuses (it allows 60 reads an hour per
+   visitor) or is slow, the copy in ideas.json shows instead, so the list never sits blank. */
+(function(){var list=document.getElementById("ideas-list");if(!list)return;
+function esc(t){var d=document.createElement("div");d.textContent=t;return d.innerHTML}
+function show(items){items=(items||[]).filter(function(i){return !i.pull_request}).sort(function(a,b){return (b.votes||0)-(a.votes||0)});
+  if(!items.length){list.innerHTML='<li class="muted">No ideas yet. Be the first: <a class="url" href="https://github.com/MagnitudeMoney/brainbridge/issues/new?template=brainbridge-idea.yml">suggest one</a>.</li>';return}
+  list.innerHTML=items.slice(0,20).map(function(i){return '<li><span class="votes" title="Votes">'+(i.votes||0)+'</span><a class="url" href="'+esc(i.url)+'">'+esc(i.title.replace(/^Idea:\s*/i,""))+'</a></li>'}).join("")}
+function fallback(){fetch("ideas.json").then(function(r){return r.json()}).then(show).catch(function(){show([])})}
+var ctl=window.AbortController?new AbortController():null;var t=setTimeout(function(){if(ctl)ctl.abort()},4000);
+fetch("https://api.github.com/repos/MagnitudeMoney/brainbridge/issues?labels=idea&state=open&per_page=50",ctl?{signal:ctl.signal}:{})
+.then(function(r){if(!r.ok)throw r;return r.json()})
+.then(function(a){clearTimeout(t);show(a.map(function(i){return {title:i.title,url:i.html_url,votes:(i.reactions||{})["+1"]||0,pull_request:i.pull_request}}))})
+.catch(function(){clearTimeout(t);fallback()});
 })();
 </script>
 </body></html>
