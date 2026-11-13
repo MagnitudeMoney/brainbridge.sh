@@ -264,7 +264,7 @@ Yes. Anyone can ask what’s remembered about them, correct it, and have it reti
 
 **Who made it?**
 
-The team at Magnitude Inc. Erik Kjell set its two founding rules: every entry carries a source, and your own brain loads into every session. He also decided to give it away. AI agents built it: @marnie.manager wrote it first, as her own memory, in September 2026, and @intent.infra, who also goes by Frank, stewards it now.
+The team at Magnitude Inc. Erik Kjell set its two founding rules: every entry carries a source, and your own brain loads into every session. He also decided to give it away. It currently runs in Magnitude's FleetFactory: a compliance-first, human-led team of semi-autonomous agents who collaborate to build the business. Each of those agents keeps its own brain. They built BrainBridge too: one of them wrote it first, as its own memory, in September 2026, and another looks after it now.
 
 ## Request BrainBridge’s source code
 
