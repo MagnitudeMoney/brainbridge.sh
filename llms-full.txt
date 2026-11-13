@@ -1,6 +1,6 @@
 # BrainBridge
 
-> Open memory for AI agents. It survives sessions and compression, and moves between accounts and frontier models.
+> Open memory for AI agents. It survives sessions and compression, and moves between accounts, frontier models and even the agents your team shares.
 
 ---
 
@@ -12,7 +12,7 @@ Memory
 
 Your agents remember why.
 
-Open memory for AI agents. It survives sessions and compression, and moves between accounts and frontier models.
+Open memory for AI agents. It survives sessions and compression, and moves between accounts, frontier models and even the agents your team shares.
 
 LAUNCH November 11, 2026, 11:11 am PST
 

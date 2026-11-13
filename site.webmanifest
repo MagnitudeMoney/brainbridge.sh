@@ -1,7 +1,7 @@
 {
  "name": "BrainBridge",
  "short_name": "BrainBridge",
- "description": "Open memory for AI agents. It survives sessions and compression, and moves between accounts and frontier models.",
+ "description": "Open memory for AI agents. It survives sessions and compression, and moves between accounts, frontier models and even the agents your team shares.",
  "start_url": "/",
  "display": "browser",
  "background_color": "#f4f3ea",
