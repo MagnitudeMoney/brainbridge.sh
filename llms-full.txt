@@ -161,7 +161,7 @@ For 93.8% of questions, a turn holding the answer is in the top 10 entries Brain
 
 38 of 50 questions answered correctly (76%), graded by Claude with LongMemEval’s own judge prompts. Counting across many past conversations scores lowest, at 38%.
 
-**Preferences are the weak spot.**
+**It misses some preferences.**
 
 Recall finds 53% of them, because a request for a recommendation rarely uses the words someone used to say what they like. That’s next.
 
