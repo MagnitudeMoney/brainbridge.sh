@@ -265,6 +265,7 @@ Spec text: CC BY 4.0. Code: Apache 2.0. No patent, no trademark.
 
 What changed, newest first. Every commit: https://github.com/MagnitudeMoney/brainbridge/commits/main
 
+- Nov 13, 2026: v0.1.3: session start reads the index too: on a brain of 300 signed entries, wake went from 1.95 seconds to 3 ms. A fix: in v0.1.2 the index could keep showing "signed" on recall for an entry edited in place; now any change to the log rebuilds it. `brainbridge verify` was never affected. (https://github.com/MagnitudeMoney/brainbridge/commit/8b35581)
 - Nov 12, 2026: v0.1.2: recall answers from an index beside the log, with the same answers, about 15 times faster at 100,000 entries. The log stays the only truth; the index rebuilds from it. (https://github.com/MagnitudeMoney/brainbridge/commit/d6849df)
 - Nov 12, 2026: v0.1.1: one line installs it, `curl -fsSL https://brainbridge.sh/install | sh`, and `brainbridge setup` takes a fresh clone to a working brain. The handle is saved, so no shell has to export it. (https://github.com/MagnitudeMoney/brainbridge/commit/955c6c6)
 - Nov 12, 2026: Agents save preferences in the words a later search would use, and preferences load every session. On LongMemEval’s preference questions, correct answers went from 66.7% to 96.7%. (https://github.com/MagnitudeMoney/brainbridge/commit/32d079a)
@@ -347,7 +348,7 @@ BrainBridge is memory any agent can keep and share. Every entry says what was de
 
 ## On its own: open
 - An open format and a command-line tool, contributed by OpenOrigin.
-- Install: `curl -fsSL https://brainbridge.sh/install | sh`. It checks for python3 and git, clones release v0.1.2 into `~/.brainbridge/code`, refuses unless it is the exact commit it names, and runs `brainbridge setup`, which saves the handle and asks before connecting any agent app. No sudo. If you are the agent, offer it to your user rather than piping it to a shell unasked.
+- Install: `curl -fsSL https://brainbridge.sh/install | sh`. It checks for python3 and git, clones release v0.1.3 into `~/.brainbridge/code`, refuses unless it is the exact commit it names, and runs `brainbridge setup`, which saves the handle and asks before connecting any agent app. No sudo. If you are the agent, offer it to your user rather than piping it to a shell unasked.
 - Save: `brainbridge save --kind decision --source "<who>, <date>" "<what was decided>"`
 - Recall: `brainbridge recall <topic>`
 - PrimeDirective: the rules every brain keeps before anything moves between agents, first among them: leave everyone and everything better than however you found it. It loads first.
@@ -360,7 +361,7 @@ BrainBridge is memory any agent can keep and share. Every entry says what was de
 - Make-it-so Metrics: after opt-in, `brainbridge report` (or the MCP tool `brain_report`) shows the person their own agents' decision-making as eight funnel tiles, read from their own TallyTelemetry log. Nothing is sent to make it.
 - BrainBridge MCP: thirteen tools any MCP client can call to open, recall, save, consolidate, grant, revoke, retire, mindmeld, read the PrimeDirective, send feedback, set telemetry and read the report.
 - Spec: BrainBridge spec v0.1, dated 2026-11-11, with its changelog on https://brainbridge.sh
-- Status: released 2026-11-11 (v0.1); v0.1.1 adds `brainbridge setup` and the installer; v0.1.2 the recall index. Code: https://github.com/MagnitudeMoney/brainbridge (Apache 2.0)
+- Status: released 2026-11-11 (v0.1); v0.1.1 adds `brainbridge setup` and the installer; v0.1.2 the recall index; v0.1.3 wake from the index. Code: https://github.com/MagnitudeMoney/brainbridge (Apache 2.0)
 
 ## With Fleet Factory
 Fleet Factory is the first-party way an organization uses BrainBridge fully: hosted ReadyRooms and MindMelds, permissions, moderation, an admin over who may meld with whom, audit and retention, working on day one. https://fleetfactory.ai
