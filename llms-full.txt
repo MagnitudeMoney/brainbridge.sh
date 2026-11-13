@@ -147,17 +147,21 @@ Because it’s plain files in git, any model from any company can read it, and s
 
 ## How well it remembers
 
-Run: Nov 12, 2026, 4:34 pm PST (baseline: raw turns, word recall, no dreamer). Earlier runs stay listed on the page as results improve.
+Run: Nov 12, 2026, 5:01 pm PST (recall ranks partial matches). The baseline run, Nov 12, 2026, 4:34 pm PST, stays listed on the page and in the results.
 
 We measure BrainBridge on LongMemEval, a public benchmark for long-term memory: 500 questions, each buried in about 490 turns of past conversation.
 
 **No dreamer.**
 
-Nothing summarizes or reorganizes memory between sessions. Entries stay as they were saved, and recall matches words.
+Nothing summarizes or reorganizes memory between sessions. Entries stay as they were saved, and recall ranks them by how many of the words they hold.
 
 **It finds the evidence.**
 
 For 93.8% of questions, a turn holding the answer is in the top 10 entries BrainBridge recalls. Ten turns picked at random: 36.2%.
+
+**One search finds it.**
+
+A single recall with the whole question now finds the evidence for 78.1% of questions, up from 18.7%, because entries holding most of the words count too.
 
 **It answers.**
 
@@ -169,7 +173,7 @@ Recall finds 53% of them, because a request for a recommendation rarely uses the
 
 **Check our work.**
 
-The code and every number are public. Run it yourself: https://github.com/MagnitudeMoney/brainbridge/blob/80e55cc/docs/brainbridge-longmemeval-results.md
+The code and every number are public. Run it yourself: https://github.com/MagnitudeMoney/brainbridge/blob/ba7beec/docs/brainbridge-longmemeval-results.md
 
 ## The entry format
 
@@ -255,6 +259,16 @@ The format, the PrimeDirective, PadLock and TallyTelemetry, in one place. Commen
 [Read the spec](https://brainbridge.sh/spec/v0.1/)
 
 Spec text: CC BY 4.0. Code: Apache 2.0. No patent, no trademark.
+
+## Changelog
+
+Every change, newest first. Full history: https://github.com/MagnitudeMoney/brainbridge/commits/main
+
+- Nov 12, 2026: `recall` ranks partial matches: entries holding every word come first, then the best partial ones, each marked with how many words it matched. One search now finds the evidence for 78.1% of LongMemEval questions, up from 18.7%. `--strict` keeps the old behaviour. A name’s random id no longer matches a search. (https://github.com/MagnitudeMoney/brainbridge/commit/ba7beec)
+- Nov 12, 2026: LongMemEval benchmark: the code and every number, published so anyone can rerun it. (https://github.com/MagnitudeMoney/brainbridge/commit/80e55cc)
+- Nov 11, 2026: `brainbridge report` and `brain_report`: what opting in gives back, read from your own log. Nothing new is sent. (https://github.com/MagnitudeMoney/brainbridge/commit/8335197)
+- Nov 11, 2026: TricorderTelemetry renamed TallyTelemetry. The behaviour is unchanged. (https://github.com/MagnitudeMoney/brainbridge/commit/02c38cb)
+- Nov 11, 2026: v0.1 released at 11:11 am PST: the open repository, the spec, the command line and the MCP server. (https://github.com/MagnitudeMoney/brainbridge/commit/dfd0280)
 
 ## Questions
 
