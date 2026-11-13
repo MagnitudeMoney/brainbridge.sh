@@ -383,6 +383,10 @@ dialog.request .lic-def li{margin-top:2px}
 /* brainbridge.sh, the full page (draft 2026-11-11): sections in the splash's
    own idiom, the mono eyebrow over a hairline, on the same 40rem column. */
 .sec{display:flex;flex-direction:column;gap:16px;padding-top:40px}
+.sec>.bhead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 16px;padding-bottom:8px;border-bottom:1px solid var(--rule)}
+.sec>.bhead h2{font-family:var(--mono);font-weight:400;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0}
+.bhead .run,.bhead select{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--muted)}
+.bhead select{background:transparent;border:0;border-bottom:1px solid var(--rule);padding:0 2px 2px;cursor:pointer}
 .sec>h2{font-family:var(--mono);font-weight:400;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0;padding-bottom:8px;border-bottom:1px solid var(--rule)}
 .sec p{margin:0;max-width:34rem;text-wrap:pretty}
 .sec .lead{font-family:var(--display);font-size:clamp(22px,3.2vw,28px);line-height:1.3;max-width:36rem}
@@ -515,15 +519,17 @@ a.act{text-decoration:none}
 <p class="muted">Because it&rsquo;s plain files in git, any model from any company can read it, and so can anyone with access.</p>
 </section>
 
-<section class="sec" id="bench" aria-labelledby="bench-t"><h2 id="bench-t">How well it remembers</h2>
+<section class="sec" id="bench" aria-labelledby="bench-t"><div class="bhead"><h2 id="bench-t">How well it remembers</h2><span class="run" id="bench-run"><time datetime="2026-11-13T00:34:00Z">Nov 12, 2026, 4:34 pm PST</time></span></div>
 <p class="lead">We measure BrainBridge on LongMemEval, a public benchmark for long-term memory: 500 questions, each buried in about 490 turns of past conversation.</p>
-<dl class="rules">
+<dl class="rules" id="bench-rows">
 <div><dt>No dreamer.</dt><dd>Nothing summarizes or reorganizes memory between sessions. Entries stay as they were saved, and recall matches words.</dd></div>
 <div><dt>It finds the evidence.</dt><dd>For 93.8% of questions, a turn holding the answer is in the top 10 entries BrainBridge recalls. Ten turns picked at random: 36.2%.</dd></div>
 <div><dt>It answers.</dt><dd>38 of 50 questions answered correctly (76%), graded by Claude with LongMemEval&rsquo;s own judge prompts. Counting across many past conversations scores lowest, at 38%.</dd></div>
 <div><dt>It misses some preferences.</dt><dd>Recall finds 53% of them, because a request for a recommendation rarely uses the words someone used to say what they like. That&rsquo;s next.</dd></div>
-<div><dt>Check our work.</dt><dd>The code and every number are public. <a class="url" href="https://github.com/MagnitudeMoney/brainbridge/blob/main/docs/brainbridge-longmemeval-results.md">Run it yourself</a>.</dd></div>
+<div><dt>Check our work.</dt><dd>The code and every number are public. <a class="url" href="https://github.com/MagnitudeMoney/brainbridge/blob/80e55cc/docs/brainbridge-longmemeval-results.md">Run it yourself</a>.</dd></div>
 </dl>
+<script type="application/json" id="bench-runs">[{"id": "2026-11-12", "at": "2026-11-13T00:34:00Z", "label": "Nov 12, 2026, 4:34 pm PST", "what": "Baseline: raw turns, word recall, no dreamer", "rows": [["No dreamer.", "Nothing summarizes or reorganizes memory between sessions. Entries stay as they were saved, and recall matches words."], ["It finds the evidence.", "For 93.8% of questions, a turn holding the answer is in the top 10 entries BrainBridge recalls. Ten turns picked at random: 36.2%."], ["It answers.", "38 of 50 questions answered correctly (76%), graded by Claude with LongMemEval&rsquo;s own judge prompts. Counting across many past conversations scores lowest, at 38%."], ["It misses some preferences.", "Recall finds 53% of them, because a request for a recommendation rarely uses the words someone used to say what they like. That&rsquo;s next."], ["Check our work.", "The code and every number are public. <a class=\"url\" href=\"https://github.com/MagnitudeMoney/brainbridge/blob/80e55cc/docs/brainbridge-longmemeval-results.md\">Run it yourself</a>."]]}]</script>
+<script>(()=>{const runs=JSON.parse(document.getElementById('bench-runs').textContent);if(runs.length<2)return;const host=document.getElementById('bench-run'),rows=document.getElementById('bench-rows');const sel=document.createElement('select');sel.setAttribute('aria-label','Benchmark run');runs.slice().reverse().forEach((r,i)=>{const o=document.createElement('option');o.value=r.id;o.textContent=r.label+(i?'':' · latest');o.title=r.what;sel.append(o)});host.replaceChildren(sel);sel.addEventListener('change',()=>{const r=runs.find(x=>x.id===sel.value);rows.innerHTML=r.rows.map(([t,d])=>'<div><dt>'+t+'</dt><dd>'+d+'</dd></div>').join('')})})();</script>
 </section>
 
 <section class="sec" id="format" aria-labelledby="format-t"><h2 id="format-t">The entry format</h2>

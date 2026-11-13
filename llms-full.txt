@@ -147,6 +147,8 @@ Because it’s plain files in git, any model from any company can read it, and s
 
 ## How well it remembers
 
+Run: Nov 12, 2026, 4:34 pm PST (baseline: raw turns, word recall, no dreamer). Earlier runs stay listed on the page as results improve.
+
 We measure BrainBridge on LongMemEval, a public benchmark for long-term memory: 500 questions, each buried in about 490 turns of past conversation.
 
 **No dreamer.**
@@ -167,7 +169,7 @@ Recall finds 53% of them, because a request for a recommendation rarely uses the
 
 **Check our work.**
 
-The code and every number are public. Run it yourself: https://github.com/MagnitudeMoney/brainbridge/blob/main/docs/brainbridge-longmemeval-results.md
+The code and every number are public. Run it yourself: https://github.com/MagnitudeMoney/brainbridge/blob/80e55cc/docs/brainbridge-longmemeval-results.md
 
 ## The entry format
 
