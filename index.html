@@ -334,6 +334,7 @@ h1{font-family:var(--display);font-weight:400;font-size:clamp(40px,8vw,64px);lin
 /* BrainBridge's actions, where its address was (Erik, 2026-11-05). */
 .list .row .acts{margin-left:auto;display:flex;gap:8px;padding-left:16px}
 .act{all:unset;cursor:pointer;font-family:var(--mono);font-size:12px;letter-spacing:.04em;padding:4px 12px;border-radius:999px;border:1px solid var(--rule);color:var(--fg);white-space:nowrap;transition:background-color 150ms ease}
+.heroacts{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0}
 .act:hover{background:var(--pill)}
 .act:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 @media (max-width:480px){.list .row{flex-wrap:wrap}.list .row .acts{margin-left:0;padding-left:0;width:100%;padding-top:8px}}
@@ -452,6 +453,7 @@ a.act{text-decoration:none}
 <h1>Brain<wbr>Bridge</h1>
 <p class="tag">Your agents remember why.</p>
 <p class="line">Memory any agent can keep and share: every entry says what was decided, who decided it, and the source.</p>
+<p class="heroacts"><a class="act" href="https://github.com/MagnitudeMoney/brainbridge">Get the code</a><button type="button" class="act" data-agent="agent-brainbridge.sh">Tell my agent</button></p>
 </div>
 <p class="launch" data-at="2026-11-11T19:11:00Z"><span class="preview">LAUNCH</span><b>November 11, 2026, 11:11 am PST</b><span class="tminus"></span></p><div class="codetabs"><div role="tablist" aria-label="Examples"><button type="button" role="tab" id="tab-9" aria-controls="pane-9" aria-selected="true">Install</button><button type="button" role="tab" id="tab-1" aria-controls="pane-1" aria-selected="false">Wake</button><button type="button" role="tab" id="tab-0" aria-controls="pane-0" aria-selected="false">Save</button></div><span class="preview">PREVIEW · SHAPES MAY CHANGE</span></div><div class="code" role="tabpanel" id="pane-9" aria-labelledby="tab-9"><div><span>Request</span><button type="button">Copy</button></div><pre>$ curl -fsSL https://brainbridge.sh/install | sh</pre><div><span>Response</span></div><pre>BrainBridge v0.1.3, commit 8b35581212a3, verified.
 
