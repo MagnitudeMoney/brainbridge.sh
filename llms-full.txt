@@ -263,6 +263,20 @@ The format, the PrimeDirective, PadLock and TallyTelemetry, in one place. Commen
 
 Spec text: CC BY 4.0. Code: Apache 2.0. No patent, no trademark.
 
+## Roadmap
+
+What's next, in the order it can land. The log stays the only truth throughout: everything built for speed is derived from it and rebuilds from it.
+
+1. Encryption (v0.2): private entries locked with the owner's own key in the age format, so a private entry on disk shows no readable text. Today they're hidden by the tool's rules but stored as plain text.
+2. A larger benchmark: LongMemEval-M, about ten times the history per question.
+3. Counting across sessions: the weakest answer type, at 38.5%.
+4. One full answer run across all six question types.
+5. Time segments: monthly files, indexed and checksummed once, rejoining byte for byte.
+6. Embeddings, optional: a second index for differently worded questions, off by default.
+7. Hosted at scale: a database for many brains, exporting back to identical JSON lines.
+
+Full roadmap with evidence: https://github.com/MagnitudeMoney/brainbridge/blob/main/docs/brainbridge-roadmap.md
+
 ## Changelog
 
 What changed, newest first. Every commit: https://github.com/MagnitudeMoney/brainbridge/commits/main
