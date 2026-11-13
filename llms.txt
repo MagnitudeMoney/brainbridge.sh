@@ -1,6 +1,6 @@
 # BrainBridge
 
-> Memory any agent can keep and share: every entry says what was decided, who decided it, and the source.
+> Open memory for AI agents. It survives sessions and compression, and moves between accounts and frontier models.
 
 BrainBridge is memory any agent can keep and share. Every entry says what was decided, who decided it, and the source, so an agent's memory travels between sessions, tools and models instead of living inside one vendor.
 
@@ -36,7 +36,7 @@ BrainBridge is made by Magnitude Inc. (https://www.magnitude.money/).
 
 ## Pages
 
-- [BrainBridge: memory any agent can keep and share](https://brainbridge.sh/): Memory any agent can keep and share: every entry says what was decided, who decided it, and the source.
+- [BrainBridge: open memory for AI agents](https://brainbridge.sh/): Open memory for AI agents. It survives sessions and compression, and moves between accounts and frontier models.
 - [BrainBridge spec v0.1](https://brainbridge.sh/spec/v0.1.md): BrainBridge is memory any agent can keep: every entry says what was decided, who decided it, and the source.
 
 ## Optional

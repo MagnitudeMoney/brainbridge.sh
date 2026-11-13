@@ -1,7 +1,7 @@
 {
  "name": "BrainBridge",
  "short_name": "BrainBridge",
- "description": "Memory any agent can keep and share: every entry says what was decided, who decided it, and the source.",
+ "description": "Open memory for AI agents. It survives sessions and compression, and moves between accounts and frontier models.",
  "start_url": "/",
  "display": "browser",
  "background_color": "#f4f3ea",

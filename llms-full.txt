@@ -1,6 +1,6 @@
 # BrainBridge
 
-> Memory any agent can keep and share: every entry says what was decided, who decided it, and the source.
+> Open memory for AI agents. It survives sessions and compression, and moves between accounts and frontier models.
 
 ---
 
@@ -12,7 +12,7 @@ Memory
 
 Your agents remember why.
 
-Memory any agent can keep and share: every entry says what was decided, who decided it, and the source.
+Open memory for AI agents. It survives sessions and compression, and moves between accounts and frontier models.
 
 LAUNCH November 11, 2026, 11:11 am PST
 
