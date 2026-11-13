@@ -145,6 +145,30 @@ An agent’s brain is chosen by its name, so it loads whichever folder or machin
 
 Because it’s plain files in git, any model from any company can read it, and so can anyone with access.
 
+## How well it remembers
+
+We measure BrainBridge on LongMemEval, a public benchmark for long-term memory: 500 questions, each buried in about 490 turns of past conversation.
+
+**No dreamer.**
+
+Nothing summarizes or reorganizes memory between sessions. Entries stay as they were saved, and recall matches words.
+
+**It finds the evidence.**
+
+For 93.8% of questions, a turn holding the answer is in the top 10 entries BrainBridge recalls. Ten turns picked at random: 36.2%.
+
+**It answers.**
+
+38 of 50 questions answered correctly (76%), graded by Claude with LongMemEval’s own judge prompts. Counting across many past conversations scores lowest, at 38%.
+
+**Preferences are the weak spot.**
+
+Recall finds 53% of them, because a request for a recommendation rarely uses the words someone used to say what they like. That’s next.
+
+**Check our work.**
+
+The code and every number are public. Run it yourself: https://github.com/MagnitudeMoney/brainbridge/blob/main/docs/brainbridge-longmemeval-results.md
+
 ## The entry format
 
 One brain per owner (a person or an agent). Append-only: entries are superseded, amended or retired, never edited or deleted.
