@@ -267,7 +267,6 @@ Every change, newest first. Full history: https://github.com/MagnitudeMoney/brai
 - Nov 12, 2026: `recall` ranks partial matches: entries holding every word come first, then the best partial ones, each marked with how many words it matched. One search now finds the evidence for 78.1% of LongMemEval questions, up from 18.7%. `--strict` keeps the old behaviour. A name’s random id no longer matches a search. (https://github.com/MagnitudeMoney/brainbridge/commit/ba7beec)
 - Nov 12, 2026: LongMemEval benchmark: the code and every number, published so anyone can rerun it. (https://github.com/MagnitudeMoney/brainbridge/commit/80e55cc)
 - Nov 11, 2026: `brainbridge report` and `brain_report`: what opting in gives back, read from your own log. Nothing new is sent. (https://github.com/MagnitudeMoney/brainbridge/commit/8335197)
-- Nov 11, 2026: TricorderTelemetry renamed TallyTelemetry. The behaviour is unchanged. (https://github.com/MagnitudeMoney/brainbridge/commit/02c38cb)
 - Nov 11, 2026: v0.1 released at 11:11 am PST: the open repository, the spec, the command line and the MCP server. (https://github.com/MagnitudeMoney/brainbridge/commit/dfd0280)
 
 ## Questions
