@@ -99,7 +99,8 @@ h1{font-family:var(--display);font-weight:400;font-size:clamp(40px,8vw,64px);lin
 .ideas{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
 .ideas li{display:flex;gap:16px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--rule)}
 .ideas .votes{font-family:var(--mono);font-size:13px;min-width:2.5em;color:var(--muted)}
-.ideasacts{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0}
+.sec .ideasacts{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0}
+.ideas li.empty{display:block}
 .codetabs{display:flex;align-items:center;gap:16px;border-bottom:1px solid var(--rule);margin:0 0 -4px}
 .codetabs [role=tablist]{display:flex;gap:24px}
 .codetabs button{all:unset;cursor:pointer;padding:12px 0 10px;font-size:15px;font-weight:500;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-1px;transition:color 150ms ease,border-color 150ms ease}
@@ -695,7 +696,7 @@ $ brainbridge connect codex --yes
 </div>
 <div role="tabpanel" id="rm-ideas" aria-labelledby="rm-t-ideas" hidden>
 <p class="lead">Ideas from anyone, most-wanted first. A thumbs-up on an idea is a vote.</p>
-<ol class="ideas" id="ideas-list"><li class="muted">Loading the ideas&hellip;</li></ol>
+<ol class="ideas" id="ideas-list"><li class="muted empty">Loading the ideas&hellip;</li></ol>
 <p class="ideasacts"><a class="act" href="https://github.com/MagnitudeMoney/brainbridge/issues/new?template=brainbridge-idea.yml">Suggest an idea</a><a class="act" href="https://github.com/MagnitudeMoney/brainbridge/issues?q=is%3Aissue+is%3Aopen+label%3Aidea+sort%3Areactions-%2B1-desc">See them all on GitHub</a></p>
 </div>
 </section>
@@ -988,7 +989,7 @@ window.addEventListener('hashchange',fromHash);
 (function(){var list=document.getElementById("ideas-list");if(!list)return;
 function esc(t){var d=document.createElement("div");d.textContent=t;return d.innerHTML}
 function show(items){items=(items||[]).filter(function(i){return !i.pull_request}).sort(function(a,b){return (b.votes||0)-(a.votes||0)});
-  if(!items.length){list.innerHTML='<li class="muted">No ideas yet. Be the first: <a class="url" href="https://github.com/MagnitudeMoney/brainbridge/issues/new?template=brainbridge-idea.yml">suggest one</a>.</li>';return}
+  if(!items.length){list.innerHTML='<li class="muted empty">No ideas yet. Be the first: <a class="url" href="https://github.com/MagnitudeMoney/brainbridge/issues/new?template=brainbridge-idea.yml">suggest one</a>.</li>';return}
   list.innerHTML=items.slice(0,20).map(function(i){return '<li><span class="votes" title="Votes">'+(i.votes||0)+'</span><a class="url" href="'+esc(i.url)+'">'+esc(i.title.replace(/^Idea:\s*/i,""))+'</a></li>'}).join("")}
 function fallback(){fetch("ideas.json").then(function(r){return r.json()}).then(show).catch(function(){show([])})}
 var ctl=window.AbortController?new AbortController():null;var t=setTimeout(function(){if(ctl)ctl.abort()},4000);
