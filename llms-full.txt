@@ -2,6 +2,8 @@
 
 > Open memory for AI agents. It survives sessions and compression, and moves between accounts, frontier models and even the agents your team shares.
 
+Each agent's brain is an append-only log of JSON lines in git, on your own machine. Every entry is signed with its owner's Ed25519 key, so anyone can verify who wrote it; encryption of private entries comes in v0.2. Grants decide who can read a brain or add to it. Any MCP client can connect, and recall answers from a local index in milliseconds. Python standard library only, Apache 2.0.
+
 ---
 
 URL: https://brainbridge.sh/
