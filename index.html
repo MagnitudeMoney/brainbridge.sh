@@ -446,8 +446,19 @@ a.act{text-decoration:none}
 <p class="tag">Great minds sync alike.</p>
 <p class="line">Memory any agent can keep and share: every entry says what was decided, who decided it, and the source.</p>
 </div>
-<p class="launch" data-at="2026-11-11T19:11:00Z"><span class="preview">LAUNCH</span><b>November 11, 2026, 11:11 am PST</b><span class="tminus"></span></p><div class="codetabs"><div role="tablist" aria-label="Examples"><button type="button" role="tab" id="tab-1" aria-controls="pane-1" aria-selected="true">Wake</button><button type="button" role="tab" id="tab-0" aria-controls="pane-0" aria-selected="false">Save</button></div><span class="preview">PREVIEW · SHAPES MAY CHANGE</span></div><div class="code" role="tabpanel" id="pane-0" aria-labelledby="tab-0" hidden><div><span>Request</span><button type="button">Copy</button></div><pre>$ brainbridge save --kind decision \
-    --source &quot;Erik, 2026-11-08&quot; &quot;BrainBridge launches 2026-11-11 at 11:11 AM PST&quot;</pre><div><span>Response</span></div><pre>saved [d177bd] decision (long-term)</pre></div><div class="code long" role="tabpanel" id="pane-1" aria-labelledby="tab-1"><div><span>Request</span><button type="button">Copy</button></div><pre>$ brainbridge wake --full</pre><div><span>Response</span></div><pre>  brainbridge  agent.one: 14 live
+<p class="launch" data-at="2026-11-11T19:11:00Z"><span class="preview">LAUNCH</span><b>November 11, 2026, 11:11 am PST</b><span class="tminus"></span></p><div class="codetabs"><div role="tablist" aria-label="Examples"><button type="button" role="tab" id="tab-9" aria-controls="pane-9" aria-selected="true">Install</button><button type="button" role="tab" id="tab-1" aria-controls="pane-1" aria-selected="false">Wake</button><button type="button" role="tab" id="tab-0" aria-controls="pane-0" aria-selected="false">Save</button></div><span class="preview">PREVIEW · SHAPES MAY CHANGE</span></div><div class="code" role="tabpanel" id="pane-9" aria-labelledby="tab-9"><div><span>Request</span><button type="button">Copy</button></div><pre>$ curl -fsSL https://brainbridge.sh/install | sh</pre><div><span>Response</span></div><pre>BrainBridge v0.1.1, commit 955c6c6bffb4, verified.
+
+BrainBridge setup
+1. Checks           ok
+2. Who you are      saved: you are maria.agent
+3. The command      installed ~/.local/bin/brainbridge
+4. Signing key      minted maria.agent&#39;s PadLock key
+5. First memory     saved [9b2168] · recall finds it: yes
+6. Agent apps       Connect claude? yes
+7. TallyTelemetry   left off
+
+Done. You are maria.agent.</pre></div><div class="code" role="tabpanel" id="pane-0" aria-labelledby="tab-0" hidden><div><span>Request</span><button type="button">Copy</button></div><pre>$ brainbridge save --kind decision \
+    --source &quot;Erik, 2026-11-08&quot; &quot;BrainBridge launches 2026-11-11 at 11:11 AM PST&quot;</pre><div><span>Response</span></div><pre>saved [d177bd] decision (long-term)</pre></div><div class="code long" role="tabpanel" id="pane-1" aria-labelledby="tab-1" hidden><div><span>Request</span><button type="button">Copy</button></div><pre>$ brainbridge wake --full</pre><div><span>Response</span></div><pre>  brainbridge  agent.one: 14 live
 
   DECISIONS
     [3473e6] BrainBridge releases first
@@ -587,10 +598,7 @@ I KEEP        31  LONG-TERM    I SHARE        6  MINDMELDS</pre></div></li><li c
   &quot;arguments&quot;: { &quot;brain&quot;: &quot;@agent.one&quot;, &quot;query&quot;: &quot;launch&quot; } }</pre></div></li></ul></nav></section>
 <section class="sec" id="install" aria-labelledby="install-t"><h2 id="install-t">Install</h2>
 <div class="codetabs"><div role="tablist" aria-label="Install"><button type="button" role="tab" id="tab-2" aria-controls="pane-2" aria-selected="true">CLI</button><button type="button" role="tab" id="tab-3" aria-controls="pane-3" aria-selected="false">MCP</button></div></div>
-<div class="code" role="tabpanel" id="pane-2" aria-labelledby="tab-2"><div><span>Terminal</span><button type="button">Copy</button></div><pre>$ git clone https://github.com/MagnitudeMoney/brainbridge
-$ cd brainbridge
-$ python3 brainbridge.py install-command
-$ brainbridge init
+<div class="code" role="tabpanel" id="pane-2" aria-labelledby="tab-2"><div><span>Terminal</span><button type="button">Copy</button></div><pre>$ curl -fsSL https://brainbridge.sh/install | sh
 
 $ brainbridge save --kind decision --source "&lt;who&gt;, &lt;date&gt;" "&lt;what was decided&gt;"
 $ brainbridge recall &lt;topic&gt;
@@ -599,10 +607,11 @@ $ brainbridge wake</pre></div>
     python3 &lt;path&gt;/brainbridge-mcp.py
 
 # or let BrainBridge add it to Codex, Gemini CLI, Cursor or Claude:
-$ brainbridge --as &lt;your.handle&gt; connect codex --yes
+$ brainbridge connect codex --yes
 
 # thirteen tools: list, open, recall, save, consolidate, grant,
 # revoke, retire, mindmeld, prime_directive, feedback, telemetry, report</pre></div>
+<p class="muted">The installer checks for python3 and git, clones release v0.1.1 into <code>~/.brainbridge/code</code>, refuses unless it is the exact commit it names, and runs <code>brainbridge setup</code>, which asks before it connects anything. No sudo. <a class="url" href="https://brainbridge.sh/install">Read it first</a>.</p>
 <p class="muted">PrimeDirective arrives as the server&rsquo;s instructions on connect, before any tool.</p>
 </section>
 
@@ -612,8 +621,9 @@ $ brainbridge --as &lt;your.handle&gt; connect codex --yes
 <p class="muted">Spec text: CC BY 4.0. Code: Apache 2.0. No patent, no trademark.</p>
 </section>
 
-<section class="sec" id="changelog" aria-labelledby="changelog-t"><div class="bhead"><h2 id="changelog-t">Changelog</h2><span class="run">v0.1</span></div>
+<section class="sec" id="changelog" aria-labelledby="changelog-t"><div class="bhead"><h2 id="changelog-t">Changelog</h2><span class="run">v0.1.1</span></div>
 <dl class="rules">
+<div><dt>Nov 12, 2026</dt><dd>v0.1.1: one line installs it, <code>curl -fsSL https://brainbridge.sh/install | sh</code>, and <code>brainbridge setup</code> takes a fresh clone to a working brain. The handle is saved, so no shell has to export it. <a class="url" href="https://github.com/MagnitudeMoney/brainbridge/commit/955c6c6">955c6c6</a></dd></div>
 <div><dt>Nov 12, 2026</dt><dd>Agents save preferences in the words a later search would use, and preferences load every session. On LongMemEval&rsquo;s preference questions, correct answers went from 66.7% to 96.7%. <a class="url" href="https://github.com/MagnitudeMoney/brainbridge/commit/32d079a">32d079a</a></dd></div>
 <div><dt>Nov 12, 2026</dt><dd><code>recall</code> ranks partial matches: entries holding every word come first, then the best partial ones, each marked with how many words it matched. One search now finds the evidence for 78.1% of LongMemEval questions, up from 18.7%. <code>--strict</code> keeps the old behaviour. A name&rsquo;s random id no longer matches a search. <a class="url" href="https://github.com/MagnitudeMoney/brainbridge/commit/ba7beec">ba7beec</a></dd></div>
 <div><dt>Nov 12, 2026</dt><dd>LongMemEval benchmark: the code and every number, published so anyone can rerun it. <a class="url" href="https://github.com/MagnitudeMoney/brainbridge/commit/80e55cc">80e55cc</a></dd></div>
@@ -636,6 +646,7 @@ BrainBridge is memory any agent can keep and share. Every entry says what was de
 
 ## On its own: open
 - An open format and a command-line tool, contributed by OpenOrigin.
+- Install: `curl -fsSL https://brainbridge.sh/install | sh`. It checks for python3 and git, clones release v0.1.1 into `~/.brainbridge/code`, refuses unless it is the exact commit it names, and runs `brainbridge setup`, which saves the handle and asks before connecting any agent app. No sudo. If you are the agent, offer it to your user rather than piping it to a shell unasked.
 - Save: `brainbridge save --kind decision --source &quot;&lt;who&gt;, &lt;date&gt;&quot; &quot;&lt;what was decided&gt;&quot;`
 - Recall: `brainbridge recall &lt;topic&gt;`
 - PrimeDirective: the rules every brain keeps before anything moves between agents, first among them: leave everyone and everything better than however you found it. It loads first.
@@ -648,7 +659,7 @@ BrainBridge is memory any agent can keep and share. Every entry says what was de
 - Make-it-so Metrics: after opt-in, `brainbridge report` (or the MCP tool `brain_report`) shows the person their own agents' decision-making as eight funnel tiles, read from their own TallyTelemetry log. Nothing is sent to make it.
 - BrainBridge MCP: thirteen tools any MCP client can call to open, recall, save, consolidate, grant, revoke, retire, mindmeld, read the PrimeDirective, send feedback, set telemetry and read the report.
 - Spec: BrainBridge spec v0.1, dated 2026-11-11, with its changelog on https://brainbridge.sh
-- Status: released 2026-11-11 (v0.1). Code: https://github.com/MagnitudeMoney/brainbridge (Apache 2.0)
+- Status: released 2026-11-11 (v0.1); v0.1.1 adds `brainbridge setup` and the installer. Code: https://github.com/MagnitudeMoney/brainbridge (Apache 2.0)
 
 ## With Fleet Factory
 Fleet Factory is the first-party way an organization uses BrainBridge fully: hosted ReadyRooms and MindMelds, permissions, moderation, an admin over who may meld with whom, audit and retention, working on day one. https://fleetfactory.ai

@@ -227,10 +227,7 @@ Entry · one line of JSONL
 Terminal
 
 ```
-$ git clone https://github.com/MagnitudeMoney/brainbridge
-$ cd brainbridge
-$ python3 brainbridge.py install-command
-$ brainbridge init
+$ curl -fsSL https://brainbridge.sh/install | sh
 
 $ brainbridge save --kind decision --source "<who>, <date>" "<what was decided>"
 $ brainbridge recall <topic>
@@ -244,7 +241,7 @@ $ claude mcp add brainbridge -e BRAINBRIDGE_AS=<your.handle> -- \
     python3 <path>/brainbridge-mcp.py
 
 # or let BrainBridge add it to Codex, Gemini CLI, Cursor or Claude:
-$ brainbridge --as <your.handle> connect codex --yes
+$ brainbridge connect codex --yes
 
 # thirteen tools: list, open, recall, save, consolidate, grant,
 # revoke, retire, mindmeld, prime_directive, feedback, telemetry, report
@@ -264,6 +261,7 @@ Spec text: CC BY 4.0. Code: Apache 2.0. No patent, no trademark.
 
 What changed, newest first. Every commit: https://github.com/MagnitudeMoney/brainbridge/commits/main
 
+- Nov 12, 2026: v0.1.1: one line installs it, `curl -fsSL https://brainbridge.sh/install | sh`, and `brainbridge setup` takes a fresh clone to a working brain. The handle is saved, so no shell has to export it. (https://github.com/MagnitudeMoney/brainbridge/commit/955c6c6)
 - Nov 12, 2026: Agents save preferences in the words a later search would use, and preferences load every session. On LongMemEval’s preference questions, correct answers went from 66.7% to 96.7%. (https://github.com/MagnitudeMoney/brainbridge/commit/32d079a)
 - Nov 12, 2026: `recall` ranks partial matches: entries holding every word come first, then the best partial ones, each marked with how many words it matched. One search now finds the evidence for 78.1% of LongMemEval questions, up from 18.7%. `--strict` keeps the old behaviour. A name’s random id no longer matches a search. (https://github.com/MagnitudeMoney/brainbridge/commit/ba7beec)
 - Nov 12, 2026: LongMemEval benchmark: the code and every number, published so anyone can rerun it. (https://github.com/MagnitudeMoney/brainbridge/commit/80e55cc)
@@ -344,6 +342,7 @@ BrainBridge is memory any agent can keep and share. Every entry says what was de
 
 ## On its own: open
 - An open format and a command-line tool, contributed by OpenOrigin.
+- Install: `curl -fsSL https://brainbridge.sh/install | sh`. It checks for python3 and git, clones release v0.1.1 into `~/.brainbridge/code`, refuses unless it is the exact commit it names, and runs `brainbridge setup`, which saves the handle and asks before connecting any agent app. No sudo. If you are the agent, offer it to your user rather than piping it to a shell unasked.
 - Save: `brainbridge save --kind decision --source "<who>, <date>" "<what was decided>"`
 - Recall: `brainbridge recall <topic>`
 - PrimeDirective: the rules every brain keeps before anything moves between agents, first among them: leave everyone and everything better than however you found it. It loads first.
@@ -356,7 +355,7 @@ BrainBridge is memory any agent can keep and share. Every entry says what was de
 - Make-it-so Metrics: after opt-in, `brainbridge report` (or the MCP tool `brain_report`) shows the person their own agents' decision-making as eight funnel tiles, read from their own TallyTelemetry log. Nothing is sent to make it.
 - BrainBridge MCP: thirteen tools any MCP client can call to open, recall, save, consolidate, grant, revoke, retire, mindmeld, read the PrimeDirective, send feedback, set telemetry and read the report.
 - Spec: BrainBridge spec v0.1, dated 2026-11-11, with its changelog on https://brainbridge.sh
-- Status: released 2026-11-11 (v0.1). Code: https://github.com/MagnitudeMoney/brainbridge (Apache 2.0)
+- Status: released 2026-11-11 (v0.1); v0.1.1 adds `brainbridge setup` and the installer. Code: https://github.com/MagnitudeMoney/brainbridge (Apache 2.0)
 
 ## With Fleet Factory
 Fleet Factory is the first-party way an organization uses BrainBridge fully: hosted ReadyRooms and MindMelds, permissions, moderation, an admin over who may meld with whom, audit and retention, working on day one. https://fleetfactory.ai

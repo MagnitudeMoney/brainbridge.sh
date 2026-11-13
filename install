@@ -1,0 +1,62 @@
+#!/bin/sh
+# BrainBridge installer: https://brainbridge.sh/install
+#
+#   curl -fsSL https://brainbridge.sh/install | sh
+#
+# Read it first, if you like:
+#   curl -fsSL https://brainbridge.sh/install -o brainbridge-install && less brainbridge-install && sh brainbridge-install
+#
+# What it does, and all it does:
+#   1. Checks for python3 (3.9+) and git.
+#   2. Clones BrainBridge into ~/.brainbridge/code (or $BRAINBRIDGE_CODE), or
+#      updates that clone, and checks out the release named below.
+#   3. Refuses to go on unless the release is the exact commit named below.
+#   4. Runs `brainbridge setup`, which asks before it changes anything else.
+# No sudo. Nothing is written outside your home folder.
+#
+# Arguments go to setup: curl -fsSL https://brainbridge.sh/install | sh -s -- --handle maria.agent
+#
+# Everything sits inside main(), which runs on the last line, so a download
+# cut short does nothing at all.
+
+main() {
+    set -eu
+    repo="https://github.com/MagnitudeMoney/brainbridge.git"
+    tag="v0.1.1"
+    commit="955c6c6bffb4fec76d46a1219ad9e79947f1bd08"
+    dir="${BRAINBRIDGE_CODE:-$HOME/.brainbridge/code}"
+
+    say() { printf '%s\n' "$*"; }
+    fail() { say "BrainBridge install stopped: $*" >&2; exit 1; }
+
+    command -v python3 >/dev/null 2>&1 || fail "python3 (3.9 or later) is needed. Install it, then run this again."
+    python3 -c 'import sys; sys.exit(sys.version_info < (3, 9))' \
+        || fail "python3 is older than 3.9. Install a newer one, then run this again."
+    command -v git >/dev/null 2>&1 || fail "git is needed. On macOS: xcode-select --install"
+
+    if [ -d "$dir/.git" ]; then
+        say "Updating BrainBridge in $dir"
+        git -C "$dir" fetch --quiet --tags origin || fail "could not reach $repo"
+    elif [ -e "$dir" ]; then
+        fail "$dir exists and is not a BrainBridge clone. Move it, or set BRAINBRIDGE_CODE to another folder."
+    else
+        say "Downloading BrainBridge $tag into $dir"
+        mkdir -p "$(dirname "$dir")"
+        git clone --quiet "$repo" "$dir" || fail "could not clone $repo"
+    fi
+    git -C "$dir" -c advice.detachedHead=false checkout --quiet "$tag" || fail "release $tag was not found"
+    got="$(git -C "$dir" rev-parse HEAD)"
+    [ "$got" = "$commit" ] || fail "release $tag is commit $got, not $commit. Nothing was set up."
+    say "BrainBridge $tag, commit ${commit%"${commit#????????????}"}, verified."
+    say ""
+
+    # setup asks questions. Piped into sh, standard input is this script, so
+    # answers come from the terminal. With no terminal (an agent), setup runs
+    # without asking and says what is left for a person.
+    if [ -t 1 ] && { : </dev/tty; } 2>/dev/null; then
+        exec python3 "$dir/brainbridge.py" setup "$@" </dev/tty
+    fi
+    exec python3 "$dir/brainbridge.py" setup "$@"
+}
+
+main "$@"
