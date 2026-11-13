@@ -171,9 +171,13 @@ A single recall with the whole question now finds the evidence for 78.1% of ques
 
 When someone says what they like, the agent saves it in words a later search would use, and preferences load every session. Preference questions answered correctly: 29 of 30 (96.7%), up from 20 of 30.
 
+**It slows as a brain grows.**
+
+One recall takes 12 ms at 1,000 entries, 1.3 seconds at 100,000 and 17 seconds at a million, because it reads the whole brain each time. An index is next.
+
 **Check our work.**
 
-The code and every number are public. Run it yourself: https://github.com/MagnitudeMoney/brainbridge/blob/32d079a/docs/brainbridge-longmemeval-results.md
+The code and every number are public. Run it yourself: https://github.com/MagnitudeMoney/brainbridge/blob/bc0eb98/docs/brainbridge-longmemeval-results.md
 
 ## The entry format
 
