@@ -10,7 +10,7 @@ Memory
 
 # BrainBridge
 
-Great minds sync alike.
+Your agents remember why.
 
 Memory any agent can keep and share: every entry says what was decided, who decided it, and the source.
 
