@@ -70,6 +70,9 @@ main{flex:1;display:flex;flex-direction:column;justify-content:flex-start;gap:24
 .head{display:flex;flex-direction:column;align-items:flex-start;gap:16px}
 .mark{color:var(--fg)}
 .pill{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;background:var(--pill);color:var(--fg);border-radius:999px;padding:4px 12px;margin:0}
+.pills{display:flex;align-items:center;gap:8px;margin:0}
+.ver{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--muted);text-decoration:none;padding:4px 0;border-bottom:1px solid transparent;transition:border-color 150ms ease,color 150ms ease}
+.ver:hover,.ver:focus-visible{color:var(--fg);border-bottom-color:currentColor}
 h1{font-family:var(--display);font-weight:400;font-size:clamp(40px,8vw,64px);line-height:1.05;letter-spacing:-.02em;margin:0;text-wrap:balance}
 .tag{font-family:var(--display);font-style:italic;font-size:clamp(22px,3.4vw,28px);line-height:1.2;margin:0}
 .line{font-size:clamp(18px,2.6vw,20px);line-height:1.5;margin:0;max-width:34rem;text-wrap:pretty}
@@ -450,7 +453,7 @@ a.act{text-decoration:none}
 <main>
 <div class="head">
 <button type="button" class="mark" aria-label="Play the mark"><span class="mk" data-kind="hexagon" data-hexagon aria-hidden="true"><svg viewBox="13.1 0 77 44" width="70.0" height="40" fill="currentColor" class="mk-face" aria-hidden="true"><g class="mk-r1"><path class="mk-left" d="M25.8 45L13.1 23L63.9 23L51.2 45Z"/><path class="mk-right" d="M13.1 21L25.8 -1L51.2 -1L63.9 21Z"/><path class="mk-slash" d="M13.1 -1H51.2L63.9 21H25.8Z"/><path class="mk-diamond" d="M38.95 24H64.35L52.8 44H27.4Z"/></g></svg></span></button>
-<p class="pill">Memory</p>
+<p class="pills"><span class="pill">Memory</span><a class="ver" href="#changelog" title="What changed">v0.1.3</a></p>
 <h1>Brain<wbr>Bridge</h1>
 <p class="tag">Your agents remember why.</p>
 <p class="line">Open memory for AI agents. It survives sessions and compression, and moves between accounts, frontier models and even the agents your team shares.</p>
