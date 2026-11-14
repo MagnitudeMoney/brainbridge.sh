@@ -401,7 +401,7 @@ An entry holds owner (whose brain it is in), by (who wrote it, if not the owner)
 
 Six kinds: decision, preference, fact, person, thread, lesson.
 
-Threads, facts and lessons start short-term and fade after 7 days. Decisions, preferences and people are long-term.
+Threads, facts and lessons start short-term and fade after 7 days of use. Decisions, preferences and people are long-term.
 
 A changed fact is a new entry that replaces the old one and keeps its name, so links survive.
 
@@ -529,7 +529,7 @@ A reader applies amends and drops retired entries before it shows a brain.
 
 ## 3. Terms
 
-`thread`, `fact` and `lesson` start short-term and fade after 7 days unless consolidated into long-term. `decision`, `preference` and `person` are long-term from the start. Facts carry a 45-day review date, threads 7.
+`thread`, `fact` and `lesson` start short-term and fade after 7 days of use unless consolidated into long-term. `decision`, `preference` and `person` are long-term from the start. Facts carry a 45-day review date, threads 7.
 
 ## 4. Grants
 
