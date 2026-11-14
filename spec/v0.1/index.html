@@ -63,7 +63,7 @@ th,td{text-align:left;vertical-align:top;padding:8px 12px 8px 0;border-bottom:1p
 <ul><li>Amend: <code>{"id", "at", "owner", "amends": &lt;id&gt;, "fields": {...}}</code> changes <code>title</code>, <code>hook</code>, <code>visibility</code> or <code>review_by</code>.</li><li>Retire: <code>{"id", "at", "owner", "retires": &lt;id&gt;, "why": "..."}</code> stops an entry loading. It is not erased: the line and its history stay.</li></ul>
 <p>A reader applies amends and drops retired entries before it shows a brain.</p>
 <h2>3. Terms</h2>
-<p><code>thread</code>, <code>fact</code> and <code>lesson</code> start short-term and fade after 7 days unless consolidated into long-term. <code>decision</code>, <code>preference</code> and <code>person</code> are long-term from the start. Facts carry a 45-day review date, threads 7.</p>
+<p><code>thread</code>, <code>fact</code> and <code>lesson</code> start short-term and fade after 7 days of use unless consolidated into long-term. <code>decision</code>, <code>preference</code> and <code>person</code> are long-term from the start. Facts carry a 45-day review date, threads 7.</p>
 <h2>4. Grants</h2>
 <pre><code>{"id": "...", "at": "...", "grantor": "readyroom.example", "grantee": "ai.assistant",
  "scope": "append", "source": "why this was granted"}</code></pre>
